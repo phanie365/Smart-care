@@ -1,0 +1,20 @@
+# Dépendances du projet PSL-CFX
+# Installation : pip install -r requirements.txt
+
+# --- Manipulation de données ---
+pandas
+numpy
+
+# --- Visualisation ---
+matplotlib
+plotly
+
+# --- Modélisation / séries temporelles ---
+statsmodels
+pmdarima
+
+# --- Application web ---
+streamlit
+
+# --- Environnement de travail ---
+jupyter
