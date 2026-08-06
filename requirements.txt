@@ -12,9 +12,14 @@ plotly
 # --- Modélisation / séries temporelles ---
 statsmodels
 pmdarima
+scipy
+
+# --- Accès aux données publiques ---
+requests
 
 # --- Application web ---
 streamlit
 
 # --- Environnement de travail ---
 jupyter
+ipython

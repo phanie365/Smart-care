@@ -321,7 +321,40 @@ riche colle parfaitement au passé mais n'a plus d'information résiduelle pour 
 incertitude. **Sur ce jeu de données, l'AIC seul est un mauvais juge**, et le modèle
 parcimonieux a été conservé.
 
-### 5.3 Interprétation honnête du score
+### 5.3 Diagnostic des résidus
+
+Choisir des paramètres ne suffit pas : encore faut-il vérifier que le modèle ne laisse
+rien d'exploitable derrière lui. Un modèle bien spécifié produit des résidus sans
+structure.
+
+| Contrôle | Résultat |
+|----------|----------|
+| Ljung-Box, retards 6, 12 et 18 | p-values de 0,84 à 0,99 : aucune autocorrélation résiduelle |
+| Jarque-Bera | p < 0,0001, asymétrie −3,82, aplatissement 22,6 : normalité rejetée |
+| Écart-type des résidus | 181 passages, soit 2,8 % du niveau moyen de la série |
+
+**Le modèle a capté la structure de la série.** Le test de Ljung-Box ne détecte aucune
+autocorrélation résiduelle, à aucun des retards testés, et le corrélogramme le confirme :
+toutes les barres tiennent dans la bande de confiance. Il ne reste donc dans les résidus
+aucun motif que le modèle aurait laissé passer, ce qui justifie de s'en tenir aux
+paramètres retenus.
+
+**La normalité est en revanche nettement rejetée, du fait d'un point unique.** Un seul
+résidu explique presque tout l'écart : **janvier 2013, à −958**, quand aucun autre ne
+dépasse 400 en valeur absolue. Sans lui, l'écart-type des résidus tombe de 181 à 80, soit
+moins de la moitié. Ce point correspond exactement à la rupture de pente du niveau annuel,
+la série montant de 83 002 à 85 993 passages entre 2011 et 2012 avant de décroître
+régulièrement jusqu'à 59 072 en 2015. Le modèle encaisse ce retournement en une fois, au
+premier mois de 2013.
+
+Cette rupture n'est pas un accident de mesure : c'est le changement de périmètre de
+comptage entre les rapports 2012 et 2015, identifié dès l'analyse des sources. **Le
+diagnostic des résidus le retrouve par une voie entièrement indépendante**, ce qui conforte
+le diagnostic initial. Conséquence pratique : les intervalles de confiance de la prévision
+reposent sur une hypothèse de normalité qui n'est pas vérifiée ici, et doivent être lus
+comme un ordre de grandeur plutôt que comme une probabilité exacte.
+
+### 5.4 Interprétation honnête du score
 
 Une erreur moyenne de **0,70 %** est spectaculairement basse. Il ne faut pas s'en réjouir
 trop vite.
