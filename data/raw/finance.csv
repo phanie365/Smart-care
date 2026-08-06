@@ -1,0 +1,22 @@
+ANNEE,INDICATEUR,SOUS_INDICATEUR,PSL,CFX,TOTAL,UNITE,NOTE,SOURCE
+2012,Dépenses d'exploitation,Total,698.81,67.27,766.08,M€,,SLP-CHF2012 - Les moyens financiers
+2012,Dépenses d'exploitation,Charges de personnel,390.79,42.35,433.14,M€,dont médical 99.72 / non-médical 333.42,SLP-CHF2012 - Les moyens financiers
+2012,Dépenses d'exploitation,Charges à caractère médical,166.48,6.33,,M€,total affiché 22.98 M€ incohérent dans le rapport source,SLP-CHF2012 - Les moyens financiers
+2012,Dépenses d'exploitation,Charges hôtelières et générales,81.95,13.60,95.56,M€,,SLP-CHF2012 - Les moyens financiers
+2012,Recettes,Total,711.52,55.66,767.18,M€,,SLP-CHF2012 - Les moyens financiers
+2012,Recettes,Assurance maladie,581.70,43.85,625.55,M€,,SLP-CHF2012 - Les moyens financiers
+2012,Solde,Total,12.71,-11.61,1.10,M€,,SLP-CHF2012 - Les moyens financiers
+2012,Investissement,Travaux déconcentrés,17.07,5.47,22.54,M€,,SLP-CHF2012 - Crédits d'investissement
+2012,Investissement,Équipements,2.5,0.4,2.9,M€,,SLP-CHF2012 - Crédits d'investissement
+2012,Investissement,"Informatique, bureautique",0.29,0.05,0.34,M€,,SLP-CHF2012 - Crédits d'investissement
+2015,Dépenses d'exploitation,Total,807.13,68.56,875.69,M€,,SLP-CHX2015 - Budget
+2015,Dépenses d'exploitation,Charges de personnel,430.94,42.27,473.21,M€,dont médical 112.62 / non-médical 358.84,SLP-CHX2015 - Budget
+2015,Dépenses d'exploitation,Charges à caractère médical,230.82,8.01,238.83,M€,,SLP-CHX2015 - Budget
+2015,Dépenses d'exploitation,Charges hôtelières et générales,92.53,13.82,106.36,M€,,SLP-CHX2015 - Budget
+2015,Recettes,Total,839.66,58.91,898.57,M€,,SLP-CHX2015 - Budget
+2015,Recettes,Assurance maladie,659.98,46.14,706.12,M€,,SLP-CHX2015 - Budget
+2015,Investissement,Travaux déconcentrés,,,24.59,M€,,SLP-CHX2015 - Crédits d'investissement
+2015,Investissement,Équipements,,,10.43,M€,,SLP-CHX2015 - Crédits d'investissement
+2015,Investissement,"Informatique, bureautique",,,2.72,M€,,SLP-CHX2015 - Crédits d'investissement
+2016,Budget,Total,,,887.3,M€,,SLP-CHF2016 - chiffres clés
+2016,Investissement,Total,,,33.1,M€,,SLP-CHF2016 - chiffres clés

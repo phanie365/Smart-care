@@ -1,0 +1,30 @@
+ANNEE,INDICATEUR,SOUS_INDICATEUR,PSL,CFX,TOTAL,UNITE,NOTE,SOURCE
+2012,Personnel médical,Total,1160,93,1253,ETP,effectif physique: 1984 médecins,SLP-CHF2012 - Les moyens humains
+2012,Personnel médical,Hospitalo-Universitaires,184,15,199,ETP,,SLP-CHF2012 - Les moyens humains
+2012,Personnel médical,Praticiens (hospitaliers+contractuels+assistants),408,30,438,ETP,,SLP-CHF2012 - Les moyens humains
+2012,Personnel médical,Praticiens attachés,235,24,259,ETP,,SLP-CHF2012 - Les moyens humains
+2012,Personnel médical,"Internes, résidents, FFI",333,24,357,ETP,,SLP-CHF2012 - Les moyens humains
+2012,Personnel médical,Étudiants,530,110,640,personnes,hors ETP,SLP-CHF2012 - Les moyens humains
+2012,Personnel non médical,Total,6312,770,7082,ETP,,SLP-CHF2012 - Les moyens humains
+2012,Personnel non médical,Direction et administratif,640,69,709,ETP,,SLP-CHF2012 - Les moyens humains
+2012,Personnel non médical,Personnel hospitalier,5173,588,5761,ETP,,SLP-CHF2012 - Les moyens humains
+2012,Personnel non médical,Personnel socio-éducatif,99,12,111,ETP,,SLP-CHF2012 - Les moyens humains
+2012,Personnel non médical,Personnel technique et ouvrier,400,101,501,ETP,,SLP-CHF2012 - Les moyens humains
+2015,Personnel médical,Total,1506,115,1621,ETP,,SLP-CHX2015 - Ressources humaines
+2015,Personnel médical,Hospitalo-Universitaires,387,43,430,personnes physiques,,SLP-CHX2015 - Ressources humaines
+2015,Personnel médical,Praticiens hospitaliers + contractuels,454,28,482,ETP,,SLP-CHX2015 - Ressources humaines
+2015,Personnel médical,Assistants hospitaliers,241,21,262,ETP,,SLP-CHX2015 - Ressources humaines
+2015,Personnel médical,"Attachés, internes, résidents, FFI",424,23,447,ETP,,SLP-CHX2015 - Ressources humaines
+2015,Personnel non médical,Total,6897,953,7850,ETP,,SLP-CHX2015 - Ressources humaines
+2015,Personnel non médical,Administratif et secrétaires médicales,687,68,755,ETP,,SLP-CHX2015 - Ressources humaines
+2015,Personnel non médical,Personnel hospitalier,5659,788,6447,ETP,,SLP-CHX2015 - Ressources humaines
+2015,Personnel non médical,Personnel socio-éducatif,113,12,125,ETP,,SLP-CHX2015 - Ressources humaines
+2015,Personnel non médical,Personnel technique et ouvrier,438,85,523,ETP,,SLP-CHX2015 - Ressources humaines
+2015,Répartition H/F,Hommes,,,26,%,,SLP-CHX2015 - Répartition homme-femme
+2015,Répartition H/F,Femmes,,,74,%,,SLP-CHX2015 - Répartition homme-femme
+2016,Personnel médical,Médecins seniors,,,1626,personnes,soit 947 ETP,SLP-CHF2016 - chiffres clés
+2016,Personnel médical,Internes,,,465,personnes,,SLP-CHF2016 - chiffres clés
+2016,Personnel médical,Étudiants hospitaliers,,,687,personnes,,SLP-CHF2016 - chiffres clés
+2016,Personnel soignant,Total,,,6585,ETP,"hospitaliers, médico-techniques, socio-éducatifs - dont 2455 infirmier·es",SLP-CHF2016 - chiffres clés
+2016,Personnel non médical,"Administratifs, techniques, ouvriers",,,1294,ETP,,SLP-CHF2016 - chiffres clés
+2016,Formation,Agents formés,,,5245,personnes,,SLP-CHF2016 - Grands projets

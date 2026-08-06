@@ -1,0 +1,66 @@
+ANNEE,INDICATEUR,SOUS_INDICATEUR,PSL,CFX,TOTAL,UNITE,NOTE,SOURCE
+2011,Séjours MCO,Hospitalisation complète (>24h),64356,2898,67254,séjours,,SLP-CHF2012 - Les modes d'hospitalisation
+2011,Séjours MCO,Ambulatoire (<24h),83911,1080,84911,séjours,,SLP-CHF2012 - Nombre de séjours en ambulatoire
+2011,Consultations externes,Total,630498,3038,633536,consultations,,SLP-CHF2012 - Les consultations externes
+2011,Urgences,Passages,83002,,83002,passages,PSL uniquement (hors dentaires),SLP-CHF2012 - Les urgences de La Pitié-Salpêtrière
+2011,Urgences,Patients admis,6083,,6083,patients,,SLP-CHF2012 - Les urgences
+2011,Journées,PSY,28396,6176,34572,journées,,SLP-CHF2012 - Nombre de journées psychiatriques
+2011,Journées,SSR,23730,45327,69057,journées,,SLP-CHF2012 - Nombre de journées SSR
+2011,Journées,SLD,13578,90799,104377,journées,,SLP-CHF2012 - Nombre de journées SLD
+2012,Hospitalisations,Total,,,155900,hospitalisations,,SLP-CHF2012 - en bref
+2012,Séjours MCO,Hospitalisation complète (>24h),64693,3494,68187,séjours,,SLP-CHF2012 - Les modes d'hospitalisation
+2012,Séjours MCO,Ambulatoire (<24h),86529,1184,87713,séjours,,SLP-CHF2012 - Nombre de séjours en ambulatoire
+2012,Consultations externes,Total,657047,3911,660958,consultations,,SLP-CHF2012 - Les consultations externes
+2012,Urgences,Passages,85993,,85993,passages,PSL uniquement (hors dentaires),SLP-CHF2012 - Les urgences de La Pitié-Salpêtrière
+2012,Urgences,Patients admis,10063,,10063,patients,,SLP-CHF2012 - Les urgences
+2012,Naissances,Total,,,2457,naissances,,SLP-CHF2012 - en bref
+2012,Transplantations,Total,,,314,greffes,dont 14 doubles + 32 prélèvements d'organes,SLP-CHF2012 - Les transplantations
+2012,Transplantations,Hépatiques,,,55,greffes,,SLP-CHF2012 - Les transplantations
+2012,Transplantations,Rénales,,,74,greffes,,SLP-CHF2012 - Les transplantations
+2012,Transplantations,Cardiaques,,,80,greffes,,SLP-CHF2012 - Les transplantations
+2012,Transplantations,Moelle osseuse,,,51,greffes,,SLP-CHF2012 - Les transplantations
+2012,Journées,PSY,30557,6643,37200,journées,,SLP-CHF2012 - Nombre de journées psychiatriques
+2012,Journées,SSR,21709,51704,73413,journées,,SLP-CHF2012 - Nombre de journées SSR
+2012,Journées,SLD,13365,76129,89494,journées,,SLP-CHF2012 - Nombre de journées SLD
+2012,Actes,Imagerie,333986,12481,346467,actes,,SLP-CHF2012 - Plateaux techniques
+2012,Actes,Soins dentaires,377686,31681,409367,actes,,SLP-CHF2012 - Plateaux techniques
+2012,Actes,Chirurgie,45463,117,45580,actes,,SLP-CHF2012 - Plateaux techniques
+2012,Séances,Dialyses,7038,,7038,séances,,SLP-CHF2012 - Plateaux techniques
+2012,Séances,Chimiothérapie,16714,482,17196,séances,,SLP-CHF2012 - Plateaux techniques
+2012,Séances,Radiothérapie,16136,,16136,séances,,SLP-CHF2012 - Plateaux techniques
+2015,Séjours MCO,Total,,,168394,séjours,,SLP-CHX2015 - L'hospitalisation
+2015,Séjours MCO,Hospitalisation complète (>24h),68533,4689,73222,séjours,évolution +3.7% vs 2014,SLP-CHX2015 - L'hospitalisation
+2015,Séjours MCO,Ambulatoire (<24h),93558,1614,95172,séjours,évolution +0.4% vs 2014,SLP-CHX2015 - L'hospitalisation
+2015,Consultations externes,Total,597660,10290,607950,consultations,évolution +4.2% vs 2014,SLP-CHX2015 - L'hospitalisation
+2015,Urgences,Passages,,,121721,passages,inclut 59072 SAU + 62649 urgences dentaires - NON comparable à 2012,SLP-CHX2015 - Urgences
+2015,Urgences,Passages SAU,59072,,59072,passages,,SLP-CHX2015 - Urgences
+2015,Urgences,Passages dentaires,62649,,62649,passages,,SLP-CHX2015 - Urgences
+2015,Urgences,Patients admis,7588,,7588,patients,,SLP-CHX2015 - Urgences
+2015,Accouchements,Total,,,2279,accouchements,,SLP-CHX2015 - En 2015
+2015,Transplantations,Total,,,378,greffes,dont 19 doubles greffes,SLP-CHX2015 - Transplantations
+2015,Transplantations,Hépatiques,,,109,greffes,,SLP-CHX2015 - Transplantations
+2015,Transplantations,Rénales,,,104,greffes,,SLP-CHX2015 - Transplantations
+2015,Transplantations,Cardiaques,,,99,greffes,,SLP-CHX2015 - Transplantations
+2015,Transplantations,Moelle osseuse,,,66,greffes,,SLP-CHX2015 - Transplantations
+2015,Journées,PSY,42945,8295,51240,journées,PSL +8% / CFX +1%,SLP-CHX2015 - PSY SSR SLD
+2015,Journées,SSR,36428,61604,98032,journées,PSL +6.6% / CFX +3.5%,SLP-CHX2015 - PSY SSR SLD
+2015,Journées,SLD,12946,54882,67828,journées,PSL -0.5% / CFX -3%,SLP-CHX2015 - PSY SSR SLD
+2015,Actes,Imagerie,255680,11271,266951,actes,,SLP-CHX2015 - Plateaux techniques
+2015,Actes,Soins dentaires,25529,7318,32847,actes,définition différente de 2012 (écart x12),SLP-CHX2015 - Plateaux techniques
+2015,Actes,Anapath,46887,,46887,actes,,SLP-CHX2015 - Plateaux techniques
+2015,Actes,Chirurgie,62926,,62926,actes,,SLP-CHX2015 - Plateaux techniques
+2015,Séances,Dialyses,6733,,6733,séances,,SLP-CHX2015 - Plateaux techniques
+2015,Séances,Chimiothérapie,28787,588,29375,séances,,SLP-CHX2015 - Plateaux techniques
+2015,Séances,Radiothérapie,15880,,15880,séances,,SLP-CHX2015 - Plateaux techniques
+2016,Séjours MCO,Total,,,175398,séjours,,SLP-CHF2016 - chiffres clés
+2016,Séjours MCO,Hospitalisation complète (>24h),,,75079,séjours,,SLP-CHF2016 - chiffres clés
+2016,Séjours MCO,Ambulatoire (<24h),,,100319,séjours,libellé rapport: hospitalisation partielle,SLP-CHF2016 - chiffres clés
+2016,Consultations externes,Total,,,644602,consultations,,SLP-CHF2016 - chiffres clés
+2016,Urgences,Passages,,,127678,passages,dont 61651 urgences spécialisées - définition différente de 2012 et 2015,SLP-CHF2016 - chiffres clés
+2016,Accouchements,Total,,,2186,accouchements,,SLP-CHF2016 - chiffres clés
+2016,Transplantations,Total,,,394,greffes,,SLP-CHF2016 - chiffres clés
+2016,Actes opératoires,Total,,,47925,actes,dont 12490 en ambulatoire,SLP-CHF2016 - chiffres clés
+2016,Journées,SSR,,,97928,journées,,SLP-CHF2016 - chiffres clés
+2016,Journées,SLD,,,67065,journées,,SLP-CHF2016 - chiffres clés
+2016,Journées,PSY,,,50690,journées,,SLP-CHF2016 - chiffres clés
+2016,Patients pris en charge,Total,,,1200000,patients,"valeur approximative (""près de 1,2 M"")",SLP-CHF2016 - chiffres clés

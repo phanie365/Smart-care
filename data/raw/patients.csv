@@ -1,0 +1,15 @@
+ANNEE,INDICATEUR,SOUS_INDICATEUR,PSL,CFX,TOTAL,UNITE,NOTE,SOURCE
+2012,Âge moyen (MCO),,53.8,85.1,,ans,,SLP-CHF2012 - Nos patients
+2012,Sexe (MCO),Hommes,47.3,34.6,,%,,SLP-CHF2012 - Nos patients
+2012,Sexe (MCO),Femmes,52.7,65.4,,%,,SLP-CHF2012 - Nos patients
+2012,Origine géographique (MCO),Île-de-France,,,86.84,%,,SLP-CHF2012 - Nos patients
+2012,Origine géographique (MCO),dont Paris,,,35.32,%,,SLP-CHF2012 - Nos patients
+2012,Origine géographique (MCO),Province,,,11.77,%,,SLP-CHF2012 - Nos patients
+2012,Origine géographique (SSR),Île-de-France,,,96,%,,SLP-CHF2012 - Nos patients
+2015,Âge moyen (MCO),,55.5,84.5,,ans,moyenne F 55 / H 56 (PSL) et F 85 / H 84 (CFX),SLP-CHX2015 - Âge moyen et sexe
+2015,Sexe (MCO),Hommes,51,39,,%,,SLP-CHX2015 - Âge moyen et sexe
+2015,Sexe (MCO),Femmes,49,61,,%,,SLP-CHX2015 - Âge moyen et sexe
+2015,Origine géographique (MCO),Île-de-France,,,86,%,,SLP-CHX2015 - Origine géographique
+2015,Origine géographique (MCO),dont Paris,,,35,%,,SLP-CHX2015 - Origine géographique
+2015,Origine géographique (MCO),Autres départements et DOM-TOM,,,13,%,,SLP-CHX2015 - Origine géographique
+2015,Origine géographique (SSR),Île-de-France,,,96,%,,SLP-CHX2015 - Origine géographique

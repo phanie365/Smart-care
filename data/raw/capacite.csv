@@ -1,0 +1,34 @@
+ANNEE,INDICATEUR,SOUS_INDICATEUR,PSL,CFX,TOTAL,UNITE,SOURCE
+2012,Lits installés,Total,1647,485,2132,lits,SLP-CHF2012 - La capacité d'hospitalisation
+2012,Lits par discipline,MCO,,,1510,lits,SLP-CHF2012 - La capacité d'hospitalisation
+2012,Lits par discipline,SSR,85,149,209,lits,SLP-CHF2012 - La capacité d'hospitalisation (attention: détail PSL/CFX approx graphique)
+2012,Lits par discipline,SLD,37,211,248,lits,SLP-CHF2012 - La capacité d'hospitalisation
+2012,Lits par discipline,PSY,120,20,140,lits,SLP-CHF2012 - La capacité d'hospitalisation
+2012,Lits par discipline,Médecine,810,105,,lits,SLP-CHF2012 - graphique par site
+2012,Lits par discipline,Chirurgie,531,,,lits,SLP-CHF2012 - graphique par site
+2012,Lits par discipline,Obstétrique,64,,,lits,SLP-CHF2012 - graphique par site
+2012,Pôles,Total,,,11,pôles,SLP-CHF2012 - en bref
+2012,Centres maladies rares,Total,,,11,centres,SLP-CHF2012 - en bref
+2012,Lits UHCD urgences,Total,20,,20,lits,SLP-CHF2012 - Les urgences
+2015,Lits installés,Total,1742,474,2216,lits,SLP-CHX2015 - Nombre de lits
+2015,Lits par discipline,MCO,,,1618,lits,SLP-CHX2015 - Nombre de lits
+2015,Lits par discipline,SSR,104,171,275,lits,SLP-CHX2015 - Nombre de lits
+2015,Lits par discipline,SLD,37,152,189,lits,SLP-CHX2015 - Nombre de lits
+2015,Lits par discipline,PSY,115,19,134,lits,SLP-CHX2015 - Nombre de lits
+2015,Lits par discipline,Médecine,866,132,,lits,SLP-CHX2015 - Nombre de lits
+2015,Lits par discipline,Chirurgie,564,,,lits,SLP-CHX2015 - Nombre de lits
+2015,Lits par discipline,Obstétrique,56,,,lits,SLP-CHX2015 - Nombre de lits
+2015,Lits de jour,Total,,,263,places,SLP-CHX2015 - En 2015
+2015,Pôles,Total,,,11,pôles,SLP-CHX2015 - En 2015
+2015,Centres maladies rares,Total,,,10,centres,SLP-CHX2015 - En 2015
+2015,Lits UHCD urgences,Total,20,,20,lits,SLP-CHX2015 - Urgences
+2015,Salles de blocs opératoires,Total,45,,45,salles,SLP-CHX2015 - Plateau médico-technique
+2015,Lits de réanimation,Total,92,,92,lits,SLP-CHX2015 - Plateau médico-technique
+2015,Lits de soins intensifs,Total,97,,97,lits,SLP-CHX2015 - Plateau médico-technique
+2015,Lits de surveillance continue,Total,61,,61,lits,SLP-CHX2015 - Plateau médico-technique
+2016,Lits installés,Total,,,2229,lits,SLP-CHF2016 - À propos / chiffres clés
+2016,Places de jour,Total,,,367,places,SLP-CHF2016 - chiffres clés (dont 54 en chirurgie ambulatoire)
+2016,Services,Total,,,73,services,SLP-CHF2016 - À propos
+2016,Pôles,Total,,,11,pôles,SLP-CHF2016 - À propos
+2016,Centres de référence maladies rares,Total,,,25,centres,SLP-CHF2016 - chiffres clés
+2016,Salles de bloc,Total,,,48,salles,SLP-CHF2016 - chiffres clés
