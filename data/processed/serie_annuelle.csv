@@ -1,0 +1,34 @@
+ANNEE,INDICATEUR,VALEUR,COMPARABLE
+2011,Consultations externes,633536.0,True
+2012,Consultations externes,660958.0,True
+2015,Consultations externes,607950.0,True
+2016,Consultations externes,644602.0,True
+2011,Journées PSY,34572.0,True
+2012,Journées PSY,37200.0,True
+2015,Journées PSY,51240.0,True
+2016,Journées PSY,50690.0,True
+2011,Journées SLD,104377.0,True
+2012,Journées SLD,89494.0,True
+2015,Journées SLD,67828.0,True
+2016,Journées SLD,67065.0,True
+2011,Journées SSR,69057.0,True
+2012,Journées SSR,73413.0,True
+2015,Journées SSR,98032.0,True
+2016,Journées SSR,97928.0,True
+2012,Lits installés,2132.0,True
+2015,Lits installés,2216.0,True
+2016,Lits installés,2229.0,True
+2011,Séjours ambulatoires,84911.0,True
+2012,Séjours ambulatoires,87713.0,True
+2015,Séjours ambulatoires,95172.0,True
+2016,Séjours ambulatoires,100319.0,True
+2011,Séjours hospitalisation complète,67254.0,True
+2012,Séjours hospitalisation complète,68187.0,True
+2015,Séjours hospitalisation complète,73222.0,True
+2016,Séjours hospitalisation complète,75079.0,True
+2012,Transplantations,314.0,True
+2015,Transplantations,378.0,True
+2016,Transplantations,394.0,True
+2011,Urgences (SAU),83002.0,False
+2012,Urgences (SAU),85993.0,False
+2015,Urgences (SAU),59072.0,False
