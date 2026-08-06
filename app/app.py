@@ -85,7 +85,7 @@ with st.expander("Signification des sigles employés"):
     colonnes_sigles = st.columns(3)
     for rang, (sigle, definition) in enumerate(SIGLES.items()):
         with colonnes_sigles[rang % 3]:
-            st.markdown(f"**{sigle}** — {definition}")
+            st.markdown(f"**{sigle}** : {definition}")
 
 onglet_hopital, onglet_annee, onglet_crise = st.tabs([
     "L'hôpital aujourd'hui",
@@ -94,7 +94,7 @@ onglet_hopital, onglet_annee, onglet_crise = st.tabs([
 ])
 
 # ===========================================================================
-# ONGLET 1 — L'hôpital aujourd'hui
+# ONGLET 1 : L'hôpital aujourd'hui
 # ===========================================================================
 
 with onglet_hopital:
@@ -302,7 +302,7 @@ with onglet_hopital:
         )
 
 # ===========================================================================
-# ONGLET 2 — L'activité au fil de l'année
+# ONGLET 2 : L'activité au fil de l'année
 # ===========================================================================
 
 with onglet_annee:
@@ -424,7 +424,7 @@ with onglet_annee:
             ))
 
         figure_serie = mise_en_page_plotly(
-            figure_serie, f"{libelle_choisi} — évolution mensuelle", "Nombre mensuel", hauteur=460
+            figure_serie, f"{libelle_choisi} : évolution mensuelle", "Nombre mensuel", hauteur=460
         )
         figure_serie.update_xaxes(title_text="Mois")
         st.plotly_chart(figure_serie, width="stretch")
@@ -440,7 +440,7 @@ with onglet_annee:
                 f"{format_nombre(moyenne_prevue)} passages par mois. La zone claire indique la "
                 f"marge d'estimation, d'environ {marge_moyenne:.0f} % : plus l'échéance est "
                 "lointaine, moins la prévision est précise. Les niveaux d'une année à l'autre "
-                "ne sont pas comparables, le périmètre de comptage ayant changé — c'est la "
+                "ne sont pas comparables, le périmètre de comptage ayant changé : c'est la "
                 "forme du rythme annuel qu'il faut lire ici."
             )
         elif serie_choisie == SERIE_AVEC_PREVISION:
@@ -456,7 +456,7 @@ with onglet_annee:
             )
 
 # ===========================================================================
-# ONGLET 3 — Et si une crise arrive ?
+# ONGLET 3 : Et si une crise arrive ?
 # ===========================================================================
 
 with onglet_crise:
@@ -484,7 +484,7 @@ with onglet_crise:
     if mode_periode != "Ensemble de la période":
         st.caption(
             f"Filtre actif : {mode_periode.lower()}"
-            + (f" — {annee_choisie}" if annee_choisie else "")
+            + (f", {annee_choisie}" if annee_choisie else "")
             + (f", T{trimestre_choisi}" if trimestre_choisi else "")
             + ". Il se règle dans l'onglet « L'activité au fil de l'année »."
         )
@@ -598,5 +598,5 @@ st.divider()
 st.caption(
     "Sources : rapports annuels PSL-CFX 2011-2016 (AP-HP) · "
     "Passages aux urgences DREES 2017-2023 · "
-    "Réalisation étudiante — données publiques"
+    "Réalisation étudiante, données publiques"
 )
