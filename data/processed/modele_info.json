@@ -1,0 +1,29 @@
+{
+  "indicateur": "Urgences (SAU)",
+  "source_serie": "data/processed/serie_mensuelle.csv",
+  "modele": "SARIMA",
+  "bibliotheque": "pmdarima 2.1.1 (auto_arima)",
+  "order": [
+    0,
+    1,
+    0
+  ],
+  "seasonal_order": [
+    1,
+    1,
+    0,
+    12
+  ],
+  "periode_entrainement_validation": "2011-01 a 2014-12",
+  "periode_test": "2015-01 a 2015-12",
+  "mape_test_pct": 0.6983,
+  "periode_entrainement_final": "2011-01 a 2015-12",
+  "nb_observations_entrainement_final": 60,
+  "aic_final": 610.74,
+  "horizon_prevision_mois": 12,
+  "periode_prevision": "2016-01 a 2016-12",
+  "niveau_confiance": 0.95,
+  "incertitude_moyenne_pct": 18.2,
+  "total_annuel_prevu": 49743.6,
+  "avertissement": "MAPE tres bas car la saisonnalite de la serie provient du profil DREES applique uniformement a chaque annee : le modele valide la coherence de la demarche, il ne demontre pas une capacite predictive sur donnees brutes. La tendance baissiere extrapolee est un artefact de changement de perimetre entre les rapports 2012 et 2015, pas une baisse reelle d'activite. Les annees 2013 et 2014 de l'entrainement sont interpolees."
+}
