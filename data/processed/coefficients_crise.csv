@@ -1,0 +1,25 @@
+# Coefficients de crise sanitaire mesures sur les donnees reelles du COVID-19
+# ---------------------------------------------------------------------------
+# Methode  : coefficient(mois) = passages 2020(mois) / moyenne 2017-2019(mois)
+#            La moyenne de reference est calculee annee par annee puis moyennee,
+#            afin que chaque annee de reference pese identiquement.
+# Lecture  : 1,00 = activite normale ; 0,54 = 54 % d'une activite normale
+# Perimetre: departement 75 (Paris), passages aux urgences toutes causes
+# Source   : DREES, "Series longues corrigees du nombre de passages aux urgences
+#            2017 a 2023 en France", data.gouv.fr, Licence Ouverte 2.0
+# Fichier  : data/external/passages_urgences_drees_2017_2023.csv
+# Import   : pd.read_csv("coefficients_crise.csv", comment="#")
+# ---------------------------------------------------------------------------
+MOIS,COEFFICIENT
+1,1.0505
+2,1.1109
+3,0.798
+4,0.5432
+5,0.6358
+6,0.763
+7,0.8431
+8,0.9161
+9,0.9528
+10,0.759
+11,0.6364
+12,0.6869
