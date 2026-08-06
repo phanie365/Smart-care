@@ -16,6 +16,27 @@ sanitaire, et restitution sous forme d'infographie interactive Streamlit.
    sur les capacités du groupe hospitalier.
 5. **Restituer** l'ensemble sous forme d'une infographie interactive (Streamlit + Plotly).
 
+## Résultats en bref
+
+**Le parti pris du projet : rien n'est supposé.** Là où un travail de ce type pose
+généralement des hypothèses invérifiables — « admettons que l'hiver pèse 30 % de
+l'activité », « admettons qu'une crise fasse chuter les passages de moitié » — la
+saisonnalité et l'ampleur de la crise sont ici **mesurées sur données publiques**.
+
+| Résultat | Valeur | D'où il vient |
+|----------|--------|---------------|
+| Rythme annuel des urgences | Creux en août à **−15,4 %**, pic en novembre à **+7,2 %**, soit **26,7 %** d'amplitude | 2 771 868 passages parisiens réellement enregistrés (DREES, 2017-2019) |
+| Bascule vers l'ambulatoire | **55,8 %** des séjours de court séjour en 2011, **57,2 %** en 2016 | Rapports annuels PSL-CFX |
+| Reconversion de Charles-Foix | Journées de soins de suite **+41,8 %**, soins de longue durée **−35,7 %** entre 2011 et 2016 | Rapports annuels PSL-CFX |
+| Modèle de prévision | SARIMA (0,1,0)(1,1,0,12), erreur moyenne de **0,70 %** sur douze mois jamais vus | `notebooks/04`, `modele_info.json` |
+| Impact d'une crise type COVID | **−21,0 %** d'activité sur douze mois, **−45,7 %** au mois le plus touché | Comparaison de 2020 à la moyenne 2017-2019 (DREES) |
+
+Une réserve est assumée et documentée : **l'erreur de 0,70 % ne démontre pas une capacité
+prédictive**. La saisonnalité de la série modélisée provenant du profil DREES appliqué
+uniformément, le modèle retrouve un motif introduit par construction. Ce score valide la
+cohérence de la chaîne de traitement, rien de plus. Le détail figure dans
+[`rapports/rapport_technique.md`](rapports/rapport_technique.md).
+
 ## Structure du dépôt
 
 ```
@@ -25,10 +46,17 @@ projet-data-pslcfx/
 │   ├── raw/            # CSV bruts extraits des PDFs (aucune transformation)
 │   ├── external/       # Données publiques téléchargées (DREES, open data santé)
 │   └── processed/      # Séries temporelles construites, prévisions, scénarios
-├── notebooks/          # Notebooks d'exploration, de modélisation et de validation
-├── scripts/            # Scripts utilitaires reproductibles (contrôle qualité, etc.)
+├── notebooks/          # Chaîne de traitement, exécutée dans l'ordre 01 → 05
+│   ├── 01_serie_annuelle.ipynb
+│   ├── 02_saisonnalite_urgences.ipynb
+│   ├── 03_reconstruction_mensuelle.ipynb
+│   ├── 04_prevision_sarima.ipynb
+│   └── 05_scenario_crise.ipynb
+├── scripts/            # Utilitaires reproductibles
+│   ├── telecharger_urgences_drees.py
+│   └── verifier_donnees.py
 ├── app/                # Application Streamlit (infographie interactive)
-├── rapports/           # Brouillons markdown des livrables
+├── rapports/           # Livrables rédigés
 ├── requirements.txt    # Dépendances Python
 └── README.md
 ```
@@ -42,9 +70,13 @@ projet-data-pslcfx/
 | 3. Consolidation | `data/raw/`, `data/external/` | Nettoyage, harmonisation des libellés et des périodes, contrôle de cohérence | `data/processed/serie_annuelle.csv` |
 | 4. Profil saisonnier | `data/external/` | Mesure de la saisonnalité mensuelle sur trois années pré-COVID, en part du total annuel et en intensité quotidienne | `data/processed/profil_saisonnier.csv` |
 | 5. Reconstruction mensuelle | Série annuelle + profil saisonnier | Interpolation linéaire des années manquantes, puis répartition des totaux annuels selon le profil mesuré, avec contrôle de conservation | `data/processed/serie_annuelle_complete.csv`, `data/processed/serie_mensuelle.csv` |
-| 6. Modélisation SARIMA | Série mensuelle | Sélection d'ordre (`pmdarima.auto_arima`), estimation, diagnostic des résidus, validation hors échantillon | `data/processed/previsions.csv` |
-| 7. Scénario de crise | Prévisions de référence + années 2020-2021 | Mesure de l'impact COVID réel (ratio mensuel 2020 vs moyenne 2017-2019) puis application à la trajectoire prévue | `data/processed/scenario_crise.csv` |
-| 8. Restitution | Séries + prévisions + scénarios | Infographie interactive et synthèse rédigée | `app/`, `rapports/` |
+| 6. Modélisation SARIMA | Série mensuelle | Sélection d'ordre (`pmdarima.auto_arima`), validation sur douze mois jamais vus, puis prévision à 12 mois | `data/processed/prevision_12mois.csv`, `data/processed/modele_info.json` |
+| 7. Scénario de crise | Prévision de référence + année 2020 | Mesure de l'impact COVID réel (rapport mensuel 2020 sur moyenne 2017-2019) puis application à la trajectoire prévue | `data/processed/coefficients_crise.csv`, `data/processed/prevision_crise.csv` |
+| 8. Restitution | Séries, prévision et scénario | Infographie interactive et livrables rédigés | `app/`, `rapports/` |
+
+Chaque étape correspond à un notebook numéroté, exécutable dans l'ordre. Les fichiers
+produits étant versionnés, aucune exécution n'est nécessaire pour consulter les résultats
+ou lancer l'application.
 
 ## Données sources
 
@@ -207,15 +239,28 @@ analyse comparant les deux sites doit se limiter aux années 2011, 2012 et 2015.
 
 ## Installation
 
-```bash
+```powershell
+# Windows (PowerShell)
 python -m venv .venv
-.venv\Scripts\activate        # Windows
+.\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
 
-> **Note :** `pmdarima` est sensible aux versions de `numpy` et `statsmodels`. En cas
-> d'erreur à l'import, épingler les versions dans `requirements.txt` ou se replier sur
-> `statsmodels.tsa.statespace.SARIMAX` avec une recherche d'ordre manuelle.
+```bash
+# macOS / Linux
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+Le projet a été développé et validé sous **Python 3.12**, avec `pandas 3.0`,
+`statsmodels 0.14`, `pmdarima 2.1` et `streamlit 1.61`.
+
+> **Note :** `pmdarima` est sensible aux versions de `numpy` et `statsmodels`. Il
+> fonctionne sans réserve avec les versions ci-dessus ; en cas d'erreur à l'import sur
+> une autre combinaison, épingler les versions dans `requirements.txt` ou se replier sur
+> `statsmodels.tsa.statespace.SARIMAX` avec une recherche d'ordre manuelle — c'est la
+> vérification par grille exhaustive déjà présente dans le notebook 04.
 
 ## Livrables
 
@@ -289,19 +334,6 @@ graphique est accompagné d'une phrase de lecture qui en donne le message princi
 - Documentation, code et livrables rédigés **en français**.
 - Les fichiers de `data/raw/` ne sont jamais modifiés à la main après extraction : toute
   transformation passe par un notebook ou un script versionné.
-- Nommage des fichiers en minuscules, sans accent ni espace (`serie_urgences_mensuelle.csv`).
-
-## État d'avancement
-
-- [x] Initialisation de la structure du projet
-- [x] Dépôt des 3 rapports annuels dans `docs/`
-- [x] Extraction manuelle des indicateurs vers `data/raw/` (6 fichiers, 180 lignes)
-- [x] Script de contrôle qualité des données sources
-- [x] Série annuelle des indicateurs clés (`data/processed/serie_annuelle.csv`)
-- [x] Récupération des données publiques de passages aux urgences (DREES 2017-2023)
-- [x] Profil saisonnier mensuel mesuré (`data/processed/profil_saisonnier.csv`)
-- [x] Reconstruction de la série mensuelle (`data/processed/serie_mensuelle.csv`)
-- [x] Modélisation SARIMA et prévision à 12 mois validée hors échantillon
-- [x] Scénario de crise sanitaire à partir de l'impact COVID mesuré
-- [x] Application Streamlit (`app/app.py`)
-- [x] Rédaction des livrables (`rapports/`)
+- Nommage des fichiers en minuscules, sans accent ni espace (`serie_mensuelle.csv`).
+- Les notebooks sont versionnés **avec leurs sorties**, afin que les résultats soient
+  lisibles sans rien exécuter.
