@@ -2,7 +2,7 @@
 
 **Analyse et prévision de l'activité des Hôpitaux universitaires Pitié-Salpêtrière / Charles-Foix**
 
-*Document de travail — projet data PSL-CFX*
+*Document de travail, projet data PSL-CFX*
 
 ---
 
@@ -19,8 +19,8 @@ Ce projet répond à deux questions concrètes. D'abord : **à quel moment de l'
 l'activité est-elle la plus forte, et de combien ?** Ensuite : **que deviendrait
 l'activité prévue si une crise sanitaire survenait ?**
 
-Il livre une chaîne de traitement complète et reproductible — de l'extraction des
-rapports annuels jusqu'à une infographie interactive — ainsi qu'un modèle de prévision
+Il livre une chaîne de traitement complète et reproductible, de l'extraction des
+rapports annuels jusqu'à une infographie interactive, ainsi qu'un modèle de prévision
 validé sur une année jamais vue par le modèle. Le parti pris méthodologique central est
 que **la saisonnalité et l'ampleur de la crise sont mesurées sur données publiques, et
 non supposées**.
@@ -31,12 +31,12 @@ non supposées**.
 
 | Source | Producteur | Période couverte | Usage dans le projet | Licence |
 |--------|-----------|------------------|----------------------|---------|
-| Rapport annuel *Les chiffres clés 2012* (`SLP-CHF2012.pdf`) | AP-HP — Hôpitaux universitaires PSL-CFX | 2011 et 2012 | Activité, capacité, pathologies, ressources humaines, finances | Document institutionnel public |
-| Livret *Les Chiffres Clés 2015* (`SLP-CHX2015.pdf`) | AP-HP — Hôpitaux universitaires PSL-CFX | 2015 | Idem, avec détail par site et par pôle | Document institutionnel public |
-| Plaquette *Repères et chiffres clés* (`SLP-CHF2016.pdf`) | AP-HP — Hôpitaux universitaires PSL-CFX | 2016 | Totaux groupe uniquement | Document institutionnel public |
-| [*Séries longues corrigées du nombre de passages aux urgences 2017 à 2023 en France*](https://www.data.gouv.fr/datasets/series-longues-corrigees-du-nombre-de-passages-aux-urgences-2017-a-2023-en-france) | DREES — ministère de la Santé | 01/01/2017 au 31/12/2023, pas quotidien, 98 départements | Mesure du profil saisonnier (2017-2019) et de l'impact de la crise (2020) | Licence Ouverte 2.0 (Etalab) |
-| [*Passages aux urgences entre 2017 et 2023 : des dynamiques contrastées selon les départements*](https://drees.solidarites-sante.gouv.fr/publications-communique-de-presse/etudes-et-resultats/241212_ER_passages-aux-urgences), Études et Résultats n° 1320 | DREES — H. Khaoua et M. Suarez Castillo, 12/12/2024 | 1996-2023 | Contextualisation du scénario de crise | Publication publique |
-| [*Covid-19 et continuité des soins — Continuer de se soigner, un impératif de santé publique*](https://www.santepubliquefrance.fr/presse/2020/covid-19-et-continuite-des-soins-continuer-de-se-soigner-un-imperatif-de-sante-publique), communiqué du 07/05/2020 | Santé publique France | Mars-avril 2020 | Explication des causes du repli des passages | Publication publique |
+| Rapport annuel *Les chiffres clés 2012* (`SLP-CHF2012.pdf`) | AP-HP, Hôpitaux universitaires PSL-CFX | 2011 et 2012 | Activité, capacité, pathologies, ressources humaines, finances | Document institutionnel public |
+| Livret *Les Chiffres Clés 2015* (`SLP-CHX2015.pdf`) | AP-HP, Hôpitaux universitaires PSL-CFX | 2015 | Idem, avec détail par site et par pôle | Document institutionnel public |
+| Plaquette *Repères et chiffres clés* (`SLP-CHF2016.pdf`) | AP-HP, Hôpitaux universitaires PSL-CFX | 2016 | Totaux groupe uniquement | Document institutionnel public |
+| [*Séries longues corrigées du nombre de passages aux urgences 2017 à 2023 en France*](https://www.data.gouv.fr/datasets/series-longues-corrigees-du-nombre-de-passages-aux-urgences-2017-a-2023-en-france) | DREES, ministère de la Santé | 01/01/2017 au 31/12/2023, pas quotidien, 98 départements | Mesure du profil saisonnier (2017-2019) et de l'impact de la crise (2020) | Licence Ouverte 2.0 (Etalab) |
+| [*Passages aux urgences entre 2017 et 2023 : des dynamiques contrastées selon les départements*](https://drees.solidarites-sante.gouv.fr/publications-communique-de-presse/etudes-et-resultats/241212_ER_passages-aux-urgences), Études et Résultats n° 1320 | DREES, H. Khaoua et M. Suarez Castillo, 12/12/2024 | 1996-2023 | Contextualisation du scénario de crise | Publication publique |
+| [*Covid-19 et continuité des soins - Continuer de se soigner, un impératif de santé publique*](https://www.santepubliquefrance.fr/presse/2020/covid-19-et-continuite-des-soins-continuer-de-se-soigner-un-imperatif-de-sante-publique), communiqué du 07/05/2020 | Santé publique France | Mars-avril 2020 | Explication des causes du repli des passages | Publication publique |
 
 Les trois rapports annuels sont conservés dans `docs/`, le fichier DREES dans
 `data/external/`. Le téléchargement de ce dernier est automatisé par
@@ -59,7 +59,7 @@ des passages avant de valider.
 Les trois rapports annuels sont des **plaquettes de communication**, pas des annexes
 statistiques. Leur mise en page est très graphique : les chiffres sont dispersés dans
 des blocs colorés, des infographies et des encarts. Une extraction automatique de
-tableaux y produit du texte entrelacé et inexploitable — les libellés d'un bloc se
+tableaux y produit du texte entrelacé et inexploitable : les libellés d'un bloc se
 mêlent aux valeurs du bloc voisin.
 
 La saisie a donc été **manuelle**, et c'est un choix, pas un pis-aller. Chaque ligne
@@ -114,8 +114,8 @@ publiés :
    détail par site provient d'une lecture de graphique, d'où son imprécision.
 3. `capacite.csv` ne possède pas de colonne `NOTE`, contrairement aux autres fichiers.
 
-Le script distingue par ailleurs ces écarts réels des simples arrondis de publication —
-deux lignes à 0,01 M€ dans `finance.csv` — qu'il signale sans les compter comme
+Le script distingue par ailleurs ces écarts réels des simples arrondis de publication
+(deux lignes à 0,01 M€ dans `finance.csv`), qu'il signale sans les compter comme
 anomalies.
 
 ### 3.4 Pièges de comparabilité
@@ -124,7 +124,7 @@ Les trois rapports ne définissent pas leurs indicateurs de la même façon. Les
 suivants doivent être respectés dans toute analyse, sous peine de produire des évolutions
 purement artificielles.
 
-**Piège n° 1 — Les passages aux urgences ne sont pas comparables entre années.**
+**Piège n° 1 : les passages aux urgences ne sont pas comparables entre années.**
 
 | Année | Valeur publiée | Périmètre réel |
 |-------|----------------|----------------|
@@ -136,14 +136,14 @@ La progression apparente de +41,5 % entre 2012 et 2015 est un **artefact de pér
 pas une croissance d'activité. Toute série temporelle sur les urgences doit s'appuyer sur
 le **SAU seul**.
 
-**Piège n° 2 — Les soins dentaires changent de définition.** Le rapport 2012 recense
+**Piège n° 2 : les soins dentaires changent de définition.** Le rapport 2012 recense
 377 686 actes sur le site de la Pitié-Salpêtrière, le rapport 2015 n'en recense que
-25 529 — un rapport de près de 1 à 15 qui traduit un changement de définition de l'acte,
+25 529, soit un rapport de près de 1 à 15 qui traduit un changement de définition de l'acte,
 et non un effondrement de l'activité. Sur le total des deux sites, l'écart reste de 1 à 12
 (409 367 actes contre 32 847). **Ces valeurs ne doivent jamais être comparées ni placées
 dans une même série.**
 
-**Piège n° 3 — Le rapport 2016 ne publie que des totaux groupe.** Les colonnes `PSL` et
+**Piège n° 3 : le rapport 2016 ne publie que des totaux groupe.** Les colonnes `PSL` et
 `CFX` y sont vides pour la quasi-totalité des indicateurs. Toute analyse comparant les
 deux sites doit se limiter aux années 2011, 2012 et 2015.
 
@@ -197,7 +197,7 @@ deux sites doit se limiter aux années 2011, 2012 et 2015.
                             │ prevision_crise.csv  │
                             └──────────┬───────────┘
                                        ▼
-                              app/ — infographie Streamlit
+                              app/ : infographie Streamlit
 ```
 
 ### 4.2 Le choix méthodologique central
@@ -213,7 +213,7 @@ coefficients de crise sur la comparaison entre l'année 2020 et cette même réf
 rapports annuels ne pouvaient pas fournir cette information : ils ne publient qu'un total
 par an, sur des périmètres mouvants.
 
-### 4.3 Étape 2 — Le profil saisonnier mesuré
+### 4.3 Étape 2 : le profil saisonnier mesuré
 
 Le fichier DREES est départemental. On retient le **département 75 (Paris)**, où se
 trouve la Pitié-Salpêtrière ; Charles-Foix, à Ivry-sur-Seine, n'a pas de service d'accueil
@@ -240,7 +240,7 @@ Le profil est calculé de deux façons complémentaires :
 | Décembre | 8,87 | 2 643,9 |
 
 La distinction entre les deux colonnes n'est pas cosmétique : **février paraît creux
-(7,66 % de l'année) alors que son intensité quotidienne est dans la moyenne** — son
+(7,66 % de l'année) alors que son intensité quotidienne est dans la moyenne** : son
 déficit tient uniquement à ses 28 jours. Le même décalage explique que le pic soit en
 octobre en part annuelle, mais en novembre en intensité réelle.
 
@@ -253,7 +253,7 @@ quasi identique : écart mensuel maximal de **0,26 point de pourcentage** (en d�
 corrélation de **0,983** entre les deux séries. Le choix du seul département 75 est donc
 robuste.
 
-### 4.4 Étape 3 — Reconstruction mensuelle
+### 4.4 Étape 3 : reconstruction mensuelle
 
 Les rapports 2013 et 2014 n'étant pas disponibles, ces années sont comblées par
 interpolation linéaire, indicateur par indicateur, **sans aucune extrapolation** au-delà
@@ -261,8 +261,8 @@ des années observées. Une colonne `INTERPOLE` distingue mesure et estimation. 
 `serie_annuelle_complete.csv` compte 51 lignes.
 
 La valeur d'un mois vaut ensuite : **total annuel × part du mois**. Quatre indicateurs
-d'activité sont mensualisés — séjours en hospitalisation complète, séjours ambulatoires,
-consultations externes et passages au SAU — soit **276 observations** dans
+d'activité sont mensualisés (séjours en hospitalisation complète, séjours ambulatoires,
+consultations externes et passages au SAU), soit **276 observations** dans
 `serie_mensuelle.csv`.
 
 **Contrôle de conservation.** Pour chacun des 23 couples (indicateur, année), la somme des
@@ -272,7 +272,7 @@ flottants. La mensualisation ne crée ni ne perd d'activité.
 
 Une précision technique mérite d'être signalée : les parts mensuelles étant enregistrées
 arrondies à quatre décimales, leur somme vaut 99,9999 % et non 100 %. Elles sont donc
-renormalisées avant usage — correction de l'arrondi d'écriture, pas modification du profil
+renormalisées avant usage : correction de l'arrondi d'écriture, pas modification du profil
 mesuré, la déformation relative maximale étant de 1 × 10⁻⁶.
 
 ---
@@ -286,12 +286,12 @@ mesuré, la déformation relative maximale étant de 1 × 10⁻⁶.
 | Indicateur modélisé | Passages au SAU |
 | Modèle | SARIMA **(0, 1, 0)(1, 1, 0, 12)** |
 | Sélection | `pmdarima 2.1.1`, `auto_arima`, critère AIC |
-| Période d'entraînement (validation) | 2011-01 à 2014-12 — 48 mois |
-| Période de test | 2015-01 à 2015-12 — 12 mois |
+| Période d'entraînement (validation) | 2011-01 à 2014-12 (48 mois) |
+| Période de test | 2015-01 à 2015-12 (12 mois) |
 | **Erreur moyenne sur le test** | **0,70 %** |
-| Réentraînement final | 2011-01 à 2015-12 — 60 observations |
+| Réentraînement final | 2011-01 à 2015-12 (60 observations) |
 | AIC du modèle final | 610,74 |
-| Horizon de prévision | 12 mois — 2016-01 à 2016-12 |
+| Horizon de prévision | 12 mois (2016-01 à 2016-12) |
 | Niveau de confiance | 95 % |
 | Marge moyenne | ± 18,2 % (de 7,2 % au premier mois à 24,9 % au douzième) |
 | Total annuel prévu | 49 744 passages |
@@ -315,7 +315,7 @@ avant projection.
 
 **Un enseignement méthodologique.** Une vérification par grille exhaustive
 (p, d, q ∈ {0,1,2} × P, D, Q ∈ {0,1}) montre que les modèles les mieux classés par l'AIC
-produisent des intervalles inexploitables — jusqu'à ± 40 000 % pour le premier d'entre
+produisent des intervalles inexploitables : jusqu'à ± 40 000 % pour le premier d'entre
 eux. C'est le symptôme d'un surajustement : la série étant quasi déterministe, un modèle
 riche colle parfaitement au passé mais n'a plus d'information résiduelle pour estimer son
 incertitude. **Sur ce jeu de données, l'AIC seul est un mauvais juge**, et le modèle
@@ -330,14 +330,14 @@ trop vite.
 de cette série n'a pas été observée sur l'hôpital : elle provient du profil DREES appliqué
 uniformément à chaque année. Le modèle retrouve donc un motif introduit par construction,
 sur une série dont le niveau annuel varie de façon presque linéaire. **Le score valide la
-cohérence du pipeline — la chaîne profil → série mensuelle → modèle → prévision fonctionne
-de bout en bout — mais il ne démontre aucune capacité à prévoir des données hospitalières
+cohérence du pipeline (la chaîne profil → série mensuelle → modèle → prévision fonctionne
+de bout en bout), mais il ne démontre aucune capacité à prévoir des données hospitalières
 brutes.**
 
 Deux réserves s'y ajoutent. D'une part, les années 2013 et 2014 du jeu d'entraînement sont
 interpolées : le modèle a appris pour moitié sur des valeurs estimées. D'autre part, la
-tendance baissière qu'il extrapole — 49 744 passages prévus pour 2016 contre 59 072 en
-2015, soit −15,8 % — **est un artefact de périmètre**, le passage de 85 993 passages en
+tendance baissière qu'il extrapole (49 744 passages prévus pour 2016 contre 59 072 en
+2015, soit −15,8 %) **est un artefact de périmètre**, le passage de 85 993 passages en
 2012 à 59 072 en 2015 traduisant un changement de comptage et non une désaffection des
 urgences.
 
@@ -365,16 +365,16 @@ interprétable indépendamment du notebook.
 
 | Mois | Coefficient | Lecture |
 |------|-------------|---------|
-| Janvier | 1,0505 | +5 % — **avant la crise** |
-| Février | 1,1109 | +11 % — **avant la crise** |
-| Mars | 0,7980 | −20 % — confinement à partir du 17 |
-| **Avril** | **0,5432** | **−46 % — plein confinement** |
+| Janvier | 1,0505 | +5 %, **avant la crise** |
+| Février | 1,1109 | +11 %, **avant la crise** |
+| Mars | 0,7980 | −20 %, confinement à partir du 17 |
+| **Avril** | **0,5432** | **−46 %, plein confinement** |
 | Mai | 0,6358 | −36 % |
 | Juin | 0,7630 | −24 % |
 | Juillet | 0,8431 | −16 % |
 | Août | 0,9161 | −8 % |
-| Septembre | 0,9528 | −5 % — presque revenu à la normale |
-| Octobre | 0,7590 | −24 % — deuxième confinement |
+| Septembre | 0,9528 | −5 %, presque revenu à la normale |
+| Octobre | 0,7590 | −24 %, deuxième confinement |
 | Novembre | 0,6364 | −36 % |
 | Décembre | 0,6869 | −31 % |
 
@@ -388,14 +388,14 @@ crise sanitaire**, au moment même où l'hôpital était le plus sollicité. Avr
 compte que 54 % des passages d'un avril ordinaire.
 
 Un détail conforte la méthode : **janvier et février 2020 ressortent au-dessus de 1**
-(1,05 et 1,11). Ce ne sont pas des mois de crise — le premier confinement débute le
-17 mars — mais des mois de saison grippale soutenue. Autrement dit, **les coefficients
+(1,05 et 1,11). Ce ne sont pas des mois de crise (le premier confinement débute le
+17 mars) mais des mois de saison grippale soutenue. Autrement dit, **les coefficients
 détectent d'eux-mêmes le début de la crise**, sans qu'on ait eu à le leur indiquer.
 
 Les deux sources documentaires confirment et expliquent ce phénomène. La DREES établit que
 le nombre de passages aux urgences en France **chute à 18,1 millions en 2020**, contre
 22 millions en 2019, avec les baisses les plus marquées lors des confinements de mars et
-de novembre — exactement le calendrier retrouvé sur le département 75. Santé publique
+de novembre, exactement le calendrier retrouvé sur le département 75. Santé publique
 France apporte les causes : recul des passages pour pathologies cardio- et
 neuro-vasculaires dès les semaines 12-13, puis remontée en semaine 17 traduisant un
 **retard de prise en charge par crainte de la contamination**, ainsi qu'une chute des
@@ -404,7 +404,7 @@ mi-avril 2020.
 
 **Conséquence pour la lecture des résultats : une baisse des passages n'est pas une baisse
 des besoins.** Une partie de cette activité est différée, non disparue, et revient plus
-tard — parfois aggravée. Un coefficient de 0,54 ne justifie pas de réduire les moyens de
+tard, parfois aggravée. Un coefficient de 0,54 ne justifie pas de réduire les moyens de
 moitié.
 
 ### 6.4 Application à la prévision
@@ -428,8 +428,8 @@ premiers mois restent en fonctionnement normal.
 
 ### 7.1 Limites
 
-**Très peu d'années observées.** Le dataset repose sur quatre années publiées — 2011,
-2012, 2015 et 2016 — dont toutes ne couvrent pas tous les indicateurs. C'est la contrainte
+**Très peu d'années observées.** Le dataset repose sur quatre années publiées (2011,
+2012, 2015 et 2016), dont toutes ne couvrent pas tous les indicateurs. C'est la contrainte
 structurante du projet : elle interdit toute estimation de saisonnalité à partir des seules
 données hospitalières.
 
@@ -439,8 +439,8 @@ représentent la moitié du jeu d'entraînement du modèle.
 
 **Le profil saisonnier est départemental, appliqué à un établissement.** On suppose que la
 saisonnalité des urgences de la Pitié-Salpêtrière ressemble à celle de l'ensemble des
-services parisiens. L'hypothèse est raisonnable — la saisonnalité tient à des facteurs
-collectifs qui touchent tous les établissements d'un même bassin — et le test de
+services parisiens. L'hypothèse est raisonnable (la saisonnalité tient à des facteurs
+collectifs qui touchent tous les établissements d'un même bassin) et le test de
 sensibilité francilien la conforte, mais elle reste une hypothèse.
 
 **Le profil est mesuré sur 2017-2019 et appliqué à 2011-2016.** On suppose donc aussi que
@@ -471,7 +471,7 @@ seulement en forme.
 **Mesurer d'autres types de crise dans le même fichier.** Le jeu DREES couvre 2017 à 2023
 et contient bien d'autres épisodes que le COVID : l'épidémie de grippe de l'hiver
 2018-2019, les vagues de chaleur estivales, les tensions hivernales récurrentes. La même
-méthode de mesure — comparaison à une référence pluriannuelle mois par mois — permettrait
+méthode de mesure (comparaison à une référence pluriannuelle mois par mois) permettrait
 de constituer une **bibliothèque de scénarios**, dont certains à la hausse, et de sortir du
 scénario unique.
 
@@ -481,7 +481,7 @@ l'activité hospitalière 2020, qui documentent la déprogrammation, permettraie
 construire selon la même méthode.
 
 **Valider le modèle sur données brutes.** Entraîner un SARIMA directement sur la série
-quotidienne DREES du département 75 — 1 095 observations réelles pré-COVID — donnerait une
+quotidienne DREES du département 75 (1 095 observations réelles pré-COVID) donnerait une
 mesure honnête de la capacité prédictive, que le score actuel ne fournit pas.
 
 ---

@@ -2,7 +2,7 @@
 
 **Recommandations opérationnelles issues de l'analyse d'activité**
 
-*Hôpitaux universitaires Pitié-Salpêtrière / Charles-Foix — document de travail*
+*Hôpitaux universitaires Pitié-Salpêtrière / Charles-Foix, document de travail*
 
 ---
 
@@ -24,11 +24,11 @@ l'enseignement majeur de 2020, sur lequel revient la partie 2.
 
 ## 1. Gérer les afflux de patients
 
-### Recommandation 1 — Concentrer le renfort sur la fenêtre octobre-janvier
+### Recommandation 1 : concentrer le renfort sur la fenêtre octobre-janvier
 
 **Le constat.** L'activité des urgences n'est pas uniforme dans l'année. Rapportée au
-nombre de passages par jour — la seule mesure comparable, puisqu'elle neutralise la
-longueur inégale des mois — elle se répartit ainsi autour d'une moyenne de **2 532
+nombre de passages par jour (la seule mesure comparable, puisqu'elle neutralise la
+longueur inégale des mois), elle se répartit ainsi autour d'une moyenne de **2 532
 passages par jour** :
 
 | Période | Passages par jour | Écart à la moyenne |
@@ -56,7 +56,7 @@ calendrier chiffré mois par mois, avec les valeurs exactes au survol. Il permet
 justifier un plan de renfort auprès de l'ARS ou de la direction des soins par une mesure,
 et non par une impression de terrain.
 
-### Recommandation 2 — Faire d'août la fenêtre de maintenance et de formation
+### Recommandation 2 : faire d'août la fenêtre de maintenance et de formation
 
 **Le constat.** Le creux est bien plus marqué que le pic. **Août tombe à 2 142 passages
 par jour, soit −15,4 % sous la moyenne** ; juillet suit à 2 420 passages (−4,4 %).
@@ -79,7 +79,7 @@ organisationnel : il libère de la capacité au moment où elle manque.
 explicitement la part de l'année et l'intensité quotidienne, ce qui évite précisément le
 contresens de février. La phrase de lecture sous le graphique le signale.
 
-### Recommandation 3 — Sécuriser l'aval des urgences sur la période haute
+### Recommandation 3 : sécuriser l'aval des urgences sur la période haute
 
 **Le constat.** Le groupe hospitalier a profondément recomposé ses capacités d'aval entre
 2011 et 2016. Les journées de soins de suite et de réadaptation ont progressé de
@@ -106,7 +106,7 @@ dimensionner le dispositif à partir de la capacité réelle plutôt que d'une e
 
 ## 2. Se préparer aux crises sanitaires
 
-### Proposition 1 — Un protocole de déprogrammation par paliers, calé sur des seuils mesurés
+### Proposition 1 : un protocole de déprogrammation par paliers, calé sur des seuils mesurés
 
 **Le constat.** La crise de 2020 n'a pas produit un effet uniforme mais une **succession
 de régimes** que les données permettent de distinguer précisément :
@@ -121,19 +121,19 @@ de régimes** que les données permettent de distinguer précisément :
 sur ces seuils, déclenché par le niveau d'activité constaté rapporté à l'activité
 attendue :
 
-- **Palier 1 — vigilance (90 à 100 %)** : aucune déprogrammation, activation de la
+- **Palier 1, vigilance (90 à 100 %)** : aucune déprogrammation, activation de la
   cellule de veille, point hebdomadaire.
-- **Palier 2 — tension (75 à 90 %)** : report de la chirurgie programmée non urgente,
+- **Palier 2, tension (75 à 90 %)** : report de la chirurgie programmée non urgente,
   redéploiement des personnels vers les secteurs sous tension, ouverture des lits d'aval
   identifiés.
-- **Palier 3 — crise (moins de 75 %)** : bascule en organisation de crise, déprogrammation
+- **Palier 3, crise (moins de 75 %)** : bascule en organisation de crise, déprogrammation
   large, mobilisation des capacités de réanimation.
 
 L'intérêt de paliers calés sur des valeurs mesurées est qu'ils sont **discutables et
 défendables** : chacun correspond à une situation réellement traversée en 2020, pas à un
 seuil choisi arbitrairement.
 
-### Proposition 2 — Dimensionner les stocks stratégiques sur le mois le plus tendu
+### Proposition 2 : dimensionner les stocks stratégiques sur le mois le plus tendu
 
 **Le constat.** Appliqué à l'horizon de prévision, le scénario de crise mesuré donne
 **39 307 passages sur douze mois au lieu de 49 744, soit 10 437 de moins (−21,0 %)**. Sur
@@ -147,14 +147,14 @@ sous-tend : recul des passages pour pathologies cardio- et neuro-vasculaires en 
 la contamination. Une partie de l'activité manquante revient plus tard, et parfois
 aggravée.
 
-**La proposition.** Dimensionner les stocks stratégiques — équipements de protection,
-consommables de réanimation, médicaments critiques — **sur le mois le plus tendu et non
+**La proposition.** Dimensionner les stocks stratégiques (équipements de protection,
+consommables de réanimation, médicaments critiques) **sur le mois le plus tendu et non
 sur la moyenne de la période**, et prévoir explicitement une capacité de rattrapage pour
 les six mois suivant la sortie de crise. Le calcul du besoin doit partir de l'activité de
 réanimation, qui augmente pendant que les passages diminuent, et non du nombre de
 passages.
 
-### Proposition 3 — Un suivi continu avec trois seuils d'alerte simples
+### Proposition 3 : un suivi continu avec trois seuils d'alerte simples
 
 **Le constat.** La prévision est assortie d'une marge d'estimation qui s'élargit avec
 l'horizon : **± 7,2 % au premier mois, ± 18,2 % en moyenne, ± 24,9 % au douzième mois**.

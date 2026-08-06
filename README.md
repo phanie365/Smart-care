@@ -1,4 +1,4 @@
-# Projet data — Groupe hospitalier Pitié-Salpêtrière / Charles-Foix (PSL-CFX)
+# Projet data : groupe hospitalier Pitié-Salpêtrière / Charles-Foix (PSL-CFX)
 
 Analyse de l'activité hospitalière du groupe PSL-CFX à partir des rapports annuels,
 prévision de l'activité par modélisation SARIMA, simulation d'un scénario de crise
@@ -19,8 +19,8 @@ sanitaire, et restitution sous forme d'infographie interactive Streamlit.
 ## Résultats en bref
 
 **Le parti pris du projet : rien n'est supposé.** Là où un travail de ce type pose
-généralement des hypothèses invérifiables — « admettons que l'hiver pèse 30 % de
-l'activité », « admettons qu'une crise fasse chuter les passages de moitié » — la
+généralement des hypothèses invérifiables (« admettons que l'hiver pèse 30 % de
+l'activité », « admettons qu'une crise fasse chuter les passages de moitié »), la
 saisonnalité et l'ampleur de la crise sont ici **mesurées sur données publiques**.
 
 | Résultat | Valeur | D'où il vient |
@@ -101,7 +101,7 @@ Six fichiers dans `data/raw/`, tous encodés en UTF-8, séparateur virgule :
 `ANNEE, INDICATEUR, SOUS_INDICATEUR, PSL, CFX, TOTAL, UNITE, NOTE, SOURCE`
 
 - `PSL` = Pitié-Salpêtrière, `CFX` = Charles-Foix, `TOTAL` = groupe hospitalier.
-- **Une cellule vide signifie « donnée non publiée dans le rapport »** — jamais zéro.
+- **Une cellule vide signifie « donnée non publiée dans le rapport »**, jamais zéro.
   La distinction est essentielle : les rapports 2016 ne publient presque aucun détail
   par site, ce qui produit de nombreuses cellules `PSL`/`CFX` vides qu'il ne faut
   surtout pas interpréter comme une activité nulle.
@@ -130,7 +130,7 @@ non corrigés puisque les CSV doivent reproduire fidèlement les rapports publi�
    Le détail par site provient d'une lecture de graphique, d'où son imprécision.
 3. `capacite.csv` ne possède pas de colonne `NOTE`, contrairement aux autres fichiers.
 
-## Données externes — passages aux urgences (DREES)
+## Données externes : passages aux urgences (DREES)
 
 Les rapports annuels ne publient qu'un total d'urgences par an, sur des périmètres
 mouvants. Impossible d'en tirer une saisonnalité. Le profil mensuel est donc **mesuré**
@@ -139,9 +139,9 @@ sur une source publique à pas quotidien, plutôt que supposé.
 | | |
 |---|---|
 | **Jeu de données** | Séries longues corrigées du nombre de passages aux urgences 2017 à 2023 en France |
-| **Producteur** | DREES — Direction de la recherche, des études, de l'évaluation et des statistiques (ministère de la Santé) |
+| **Producteur** | DREES, Direction de la recherche, des études, de l'évaluation et des statistiques (ministère de la Santé) |
 | **Diffusion** | [data.gouv.fr](https://www.data.gouv.fr/datasets/series-longues-corrigees-du-nombre-de-passages-aux-urgences-2017-a-2023-en-france) |
-| **Licence** | Licence Ouverte 2.0 (Etalab) — réutilisation libre avec mention de la source |
+| **Licence** | Licence Ouverte 2.0 (Etalab), réutilisation libre avec mention de la source |
 | **Période** | 1er janvier 2017 au 31 décembre 2023, pas quotidien |
 | **Granularité** | Départementale (98 codes) |
 | **Fichier local** | `data/external/passages_urgences_drees_2017_2023.csv` (7,4 Mo) |
@@ -172,7 +172,7 @@ télécharger pour faire tourner les notebooks ou l'application.
 
 Le script `scripts/telecharger_urgences_drees.py` documente néanmoins la provenance de
 cette donnée : il va la chercher à la source sur data.gouv.fr et vérifie qu'elle est
-conforme avant de la valider — taille du fichier, parsing, présence des colonnes
+conforme avant de la valider : taille du fichier, parsing, présence des colonnes
 attendues, lisibilité des dates et caractère numérique des passages. La provenance est
 ainsi reproductible plutôt que déclarative.
 
@@ -193,7 +193,7 @@ Ivry-sur-Seine (94), n'a pas de service d'accueil des urgences.
 Le profil « normal » est construit sur **2017, 2018 et 2019 uniquement**. Les années
 2020 et suivantes sont écartées de la référence pour deux raisons : l'épidémie déforme
 la saisonnalité habituelle, et les confinements ont fait chuter la fréquentation pour
-des motifs sans rapport avec l'état de santé de la population — en avril 2020, Paris
+des motifs sans rapport avec l'état de santé de la population : en avril 2020, Paris
 n'enregistre que **54 %** des passages d'un mois d'avril normal.
 
 **Le fichier complet est néanmoins conservé dans `data/external/`.** Les années 2020 à
@@ -202,7 +202,7 @@ n'enregistre que **54 %** des passages d'un mois d'avril normal.
 
 ### Résultat
 
-`data/processed/profil_saisonnier.csv` — 12 lignes, colonnes `MOIS`, `PCT_NORMAL`
+`data/processed/profil_saisonnier.csv` contient 12 lignes, colonnes `MOIS`, `PCT_NORMAL`
 (part du mois dans le total annuel, somme = 100) et `PASSAGES_MOYENS_PAR_JOUR`.
 
 La saisonnalité parisienne est réelle mais modérée : de **2 142 passages par jour en
@@ -234,7 +234,7 @@ s'appuyer sur le **SAU seul**, à l'exclusion des urgences dentaires et spécial
 
 ### 2. Soins dentaires : définitions différentes
 
-377 686 actes sur le site de la Pitié-Salpêtrière en 2012 contre 25 529 en 2015 — un
+377 686 actes sur le site de la Pitié-Salpêtrière en 2012 contre 25 529 en 2015, soit un
 rapport de près de 1 à 15 qui traduit un changement de définition de l'acte, et non un
 effondrement de l'activité. Sur le total des deux sites, l'écart reste de 1 à 12
 (409 367 actes contre 32 847).
@@ -268,7 +268,7 @@ Le projet a été développé et validé sous **Python 3.12**, avec `pandas 3.0`
 > **Note :** `pmdarima` est sensible aux versions de `numpy` et `statsmodels`. Il
 > fonctionne sans réserve avec les versions ci-dessus ; en cas d'erreur à l'import sur
 > une autre combinaison, épingler les versions dans `requirements.txt` ou se replier sur
-> `statsmodels.tsa.statespace.SARIMAX` avec une recherche d'ordre manuelle — c'est la
+> `statsmodels.tsa.statespace.SARIMAX` avec une recherche d'ordre manuelle : c'est la
 > vérification par grille exhaustive déjà présente dans le notebook 04.
 
 ## Livrables
@@ -308,7 +308,7 @@ installé dans `.venv/`, pas au niveau du système.
 L'application s'ouvre dans le navigateur sur `http://localhost:8501`. Elle **ne
 recalcule aucun modèle** : elle lit uniquement les fichiers déjà produits dans
 `data/raw/` et `data/processed/`. Les notebooks doivent donc avoir été exécutés au
-préalable — ou, plus simplement, les fichiers versionnés suffisent tels quels.
+préalable. Plus simplement, les fichiers déjà versionnés suffisent tels quels.
 
 ### Organisation de l'application
 
@@ -319,12 +319,12 @@ préalable — ou, plus simplement, les fichiers versionnés suffisent tels quel
 
 ### Les trois onglets
 
-1. **L'hôpital aujourd'hui** — six chiffres clés, la bascule vers l'ambulatoire, la
+1. **L'hôpital aujourd'hui** : six chiffres clés, la bascule vers l'ambulatoire, la
    répartition des lits par discipline et les principales causes d'hospitalisation.
-2. **L'activité au fil de l'année** — le rythme mensuel mesuré sur les données DREES,
+2. **L'activité au fil de l'année** : le rythme mensuel mesuré sur les données DREES,
    puis l'évolution mois par mois de l'indicateur choisi, prolongée par la prévision et
    sa marge d'estimation. Deux filtres : indicateur affiché et période.
-3. **Et si une crise arrive ?** — un interrupteur « Mode crise sanitaire » qui superpose
+3. **Et si une crise arrive ?** : un interrupteur « Mode crise sanitaire » qui superpose
    à la trajectoire normale celle qui serait constatée si une crise comparable à 2020
    survenait, avec trois indicateurs d'impact. Les filtres de l'onglet 2 s'y appliquent
    également.
@@ -334,8 +334,8 @@ préalable — ou, plus simplement, les fichiers versionnés suffisent tels quel
 Le public visé est la direction d'établissement et les équipes soignantes, pas des
 spécialistes de la donnée. Le vocabulaire statistique est donc banni de l'écran : on
 parle de « prévision » et de « marge d'estimation », jamais de modèle ni de métrique
-d'erreur. En revanche, le vocabulaire hospitalier est conservé — MCO, SSR, SLD,
-ambulatoire, SAU — et chaque sigle est défini dans un dépliant en haut de page. Chaque
+d'erreur. En revanche, le vocabulaire hospitalier est conservé (MCO, SSR, SLD,
+ambulatoire, SAU) et chaque sigle est défini dans un dépliant en haut de page. Chaque
 graphique est accompagné d'une phrase de lecture qui en donne le message principal.
 
 ## Conventions
