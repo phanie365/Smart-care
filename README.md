@@ -165,15 +165,24 @@ arrondies à l'import**, sous peine d'introduire un biais systématique.
 > séparateur `;`. Le code du projet essaie les deux formats et échoue explicitement si
 > aucun ne convient, plutôt que de produire silencieusement des dates vides.
 
-### Téléchargement
+### Comment ce fichier a été obtenu
+
+**Le fichier est déjà présent dans le dépôt** : cloner le projet suffit, il n'y a rien à
+télécharger pour faire tourner les notebooks ou l'application.
+
+Le script `scripts/telecharger_urgences_drees.py` documente néanmoins la provenance de
+cette donnée : il va la chercher à la source sur data.gouv.fr et vérifie qu'elle est
+conforme avant de la valider — taille du fichier, parsing, présence des colonnes
+attendues, lisibilité des dates et caractère numérique des passages. La provenance est
+ainsi reproductible plutôt que déclarative.
+
+Il n'est utile que dans deux cas : si le fichier a été supprimé ou corrompu, ou si la
+DREES publie une mise à jour du jeu de données.
 
 ```bash
-python scripts/telecharger_urgences_drees.py          # ignore si déjà présent
-python scripts/telecharger_urgences_drees.py --force  # force le retéléchargement
+python scripts/telecharger_urgences_drees.py          # ne fait rien si le fichier est là
+python scripts/telecharger_urgences_drees.py --force  # retélécharge malgré tout
 ```
-
-Le script vérifie la taille du fichier, son parsing, la présence des colonnes attendues,
-la lisibilité des dates et le caractère numérique des passages avant de valider.
 
 ### Périmètre retenu et années exclues
 
@@ -266,10 +275,10 @@ Le projet a été développé et validé sous **Python 3.12**, avec `pandas 3.0`
 
 Deux documents rédigés, dans `rapports/` :
 
-| Document | Contenu | Lecteur visé |
-|----------|---------|--------------|
-| [`rapport_technique.md`](rapports/rapport_technique.md) | Sources, construction du dataset, pièges de comparabilité, pipeline, modèle et validation, scénario de crise, limites et perspectives | Jury, encadrant, tout lecteur souhaitant reproduire ou auditer les traitements |
-| [`rapport_mise_en_place.md`](rapports/rapport_mise_en_place.md) | Recommandations opérationnelles : gestion des afflux, préparation aux crises, feuille de route | Direction d'établissement, encadrement soignant |
+| Document | Contenu |
+|----------|---------|
+| [`rapport_technique.md`](rapports/rapport_technique.md) | Sources, construction du dataset, pièges de comparabilité, pipeline, modèle et validation, scénario de crise, limites et perspectives |
+| [`rapport_mise_en_place.md`](rapports/rapport_mise_en_place.md) | Recommandations opérationnelles : gestion des afflux, préparation aux crises, feuille de route |
 
 À quoi s'ajoute l'infographie interactive (`app/`), dont la commande de lancement est
 donnée ci-dessous.
