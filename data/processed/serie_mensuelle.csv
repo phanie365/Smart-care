@@ -1,0 +1,277 @@
+DATE,ANNEE,MOIS,INDICATEUR,VALEUR,INTERPOLE
+2011-01-01,2011,1,Consultations externes,54809.15,False
+2011-02-01,2011,2,Consultations externes,48535.24,False
+2011-03-01,2011,3,Consultations externes,54114.8,False
+2011-04-01,2011,4,Consultations externes,51550.24,False
+2011-05-01,2011,5,Consultations externes,53689.06,False
+2011-06-01,2011,6,Consultations externes,53506.6,False
+2011-07-01,2011,7,Consultations externes,51427.34,False
+2011-08-01,2011,8,Consultations externes,45529.74,False
+2011-09-01,2011,9,Consultations externes,51480.55,False
+2011-10-01,2011,10,Consultations externes,56872.58,False
+2011-11-01,2011,11,Consultations externes,55809.51,False
+2011-12-01,2011,12,Consultations externes,56211.17,False
+2012-01-01,2012,1,Consultations externes,57181.52,False
+2012-02-01,2012,2,Consultations externes,50636.04,False
+2012-03-01,2012,3,Consultations externes,56457.11,False
+2012-04-01,2012,4,Consultations externes,53781.55,False
+2012-05-01,2012,5,Consultations externes,56012.94,False
+2012-06-01,2012,6,Consultations externes,55822.59,False
+2012-07-01,2012,7,Consultations externes,53653.32,False
+2012-08-01,2012,8,Consultations externes,47500.46,False
+2012-09-01,2012,9,Consultations externes,53708.84,False
+2012-10-01,2012,10,Consultations externes,59334.26,False
+2012-11-01,2012,11,Consultations externes,58225.17,False
+2012-12-01,2012,12,Consultations externes,58644.22,False
+2013-01-01,2013,1,Consultations externes,55652.89,True
+2013-02-01,2013,2,Consultations externes,49282.39,True
+2013-03-01,2013,3,Consultations externes,54947.84,True
+2013-04-01,2013,4,Consultations externes,52343.81,True
+2013-05-01,2013,5,Consultations externes,54515.55,True
+2013-06-01,2013,6,Consultations externes,54330.29,True
+2013-07-01,2013,7,Consultations externes,52219.01,True
+2013-08-01,2013,8,Consultations externes,46230.63,True
+2013-09-01,2013,9,Consultations externes,52273.05,True
+2013-10-01,2013,10,Consultations externes,57748.08,True
+2013-11-01,2013,11,Consultations externes,56668.64,True
+2013-12-01,2013,12,Consultations externes,57076.49,True
+2014-01-01,2014,1,Consultations externes,54124.26,True
+2014-02-01,2014,2,Consultations externes,47928.75,True
+2014-03-01,2014,3,Consultations externes,53438.58,True
+2014-04-01,2014,4,Consultations externes,50906.07,True
+2014-05-01,2014,5,Consultations externes,53018.16,True
+2014-06-01,2014,6,Consultations externes,52837.98,True
+2014-07-01,2014,7,Consultations externes,50784.7,True
+2014-08-01,2014,8,Consultations externes,44960.8,True
+2014-09-01,2014,9,Consultations externes,50837.25,True
+2014-10-01,2014,10,Consultations externes,56161.9,True
+2014-11-01,2014,11,Consultations externes,55112.11,True
+2014-12-01,2014,12,Consultations externes,55508.76,True
+2015-01-01,2015,1,Consultations externes,52595.63,False
+2015-02-01,2015,2,Consultations externes,46575.1,False
+2015-03-01,2015,3,Consultations externes,51929.32,False
+2015-04-01,2015,4,Consultations externes,49468.33,False
+2015-05-01,2015,5,Consultations externes,51520.77,False
+2015-06-01,2015,6,Consultations externes,51345.68,False
+2015-07-01,2015,7,Consultations externes,49350.39,False
+2015-08-01,2015,8,Consultations externes,43690.98,False
+2015-09-01,2015,9,Consultations externes,49401.46,False
+2015-10-01,2015,10,Consultations externes,54575.73,False
+2015-11-01,2015,11,Consultations externes,53555.58,False
+2015-12-01,2015,12,Consultations externes,53941.03,False
+2016-01-01,2016,1,Consultations externes,55766.51,False
+2016-02-01,2016,2,Consultations externes,49383.01,False
+2016-03-01,2016,3,Consultations externes,55060.02,False
+2016-04-01,2016,4,Consultations externes,52450.67,False
+2016-05-01,2016,5,Consultations externes,54626.85,False
+2016-06-01,2016,6,Consultations externes,54441.21,False
+2016-07-01,2016,7,Consultations externes,52325.62,False
+2016-08-01,2016,8,Consultations externes,46325.01,False
+2016-09-01,2016,9,Consultations externes,52379.77,False
+2016-10-01,2016,10,Consultations externes,57865.98,False
+2016-11-01,2016,11,Consultations externes,56784.34,False
+2016-12-01,2016,12,Consultations externes,57193.01,False
+2011-01-01,2011,1,Séjours ambulatoires,7345.91,False
+2011-02-01,2011,2,Séjours ambulatoires,6505.04,False
+2011-03-01,2011,3,Séjours ambulatoires,7252.85,False
+2011-04-01,2011,4,Séjours ambulatoires,6909.13,False
+2011-05-01,2011,5,Séjours ambulatoires,7195.79,False
+2011-06-01,2011,6,Séjours ambulatoires,7171.34,False
+2011-07-01,2011,7,Séjours ambulatoires,6892.66,False
+2011-08-01,2011,8,Séjours ambulatoires,6102.22,False
+2011-09-01,2011,9,Séjours ambulatoires,6899.79,False
+2011-10-01,2011,10,Séjours ambulatoires,7622.47,False
+2011-11-01,2011,11,Séjours ambulatoires,7479.99,False
+2011-12-01,2011,12,Séjours ambulatoires,7533.82,False
+2012-01-01,2012,1,Séjours ambulatoires,7588.32,False
+2012-02-01,2012,2,Séjours ambulatoires,6719.7,False
+2012-03-01,2012,3,Séjours ambulatoires,7492.19,False
+2012-04-01,2012,4,Séjours ambulatoires,7137.13,False
+2012-05-01,2012,5,Séjours ambulatoires,7433.25,False
+2012-06-01,2012,6,Séjours ambulatoires,7407.98,False
+2012-07-01,2012,7,Séjours ambulatoires,7120.11,False
+2012-08-01,2012,8,Séjours ambulatoires,6303.59,False
+2012-09-01,2012,9,Séjours ambulatoires,7127.48,False
+2012-10-01,2012,10,Séjours ambulatoires,7874.0,False
+2012-11-01,2012,11,Séjours ambulatoires,7726.82,False
+2012-12-01,2012,12,Séjours ambulatoires,7782.43,False
+2013-01-01,2013,1,Séjours ambulatoires,7803.42,True
+2013-02-01,2013,2,Séjours ambulatoires,6910.18,True
+2013-03-01,2013,3,Séjours ambulatoires,7704.56,True
+2013-04-01,2013,4,Séjours ambulatoires,7339.44,True
+2013-05-01,2013,5,Séjours ambulatoires,7643.95,True
+2013-06-01,2013,6,Séjours ambulatoires,7617.97,True
+2013-07-01,2013,7,Séjours ambulatoires,7321.94,True
+2013-08-01,2013,8,Séjours ambulatoires,6482.27,True
+2013-09-01,2013,9,Séjours ambulatoires,7329.51,True
+2013-10-01,2013,10,Séjours ambulatoires,8097.2,True
+2013-11-01,2013,11,Séjours ambulatoires,7945.85,True
+2013-12-01,2013,12,Séjours ambulatoires,8003.03,True
+2014-01-01,2014,1,Séjours ambulatoires,8018.52,True
+2014-02-01,2014,2,Séjours ambulatoires,7100.66,True
+2014-03-01,2014,3,Séjours ambulatoires,7916.94,True
+2014-04-01,2014,4,Séjours ambulatoires,7541.75,True
+2014-05-01,2014,5,Séjours ambulatoires,7854.65,True
+2014-06-01,2014,6,Séjours ambulatoires,7827.96,True
+2014-07-01,2014,7,Séjours ambulatoires,7523.77,True
+2014-08-01,2014,8,Séjours ambulatoires,6660.95,True
+2014-09-01,2014,9,Séjours ambulatoires,7531.55,True
+2014-10-01,2014,10,Séjours ambulatoires,8320.4,True
+2014-11-01,2014,11,Séjours ambulatoires,8164.87,True
+2014-12-01,2014,12,Séjours ambulatoires,8223.64,True
+2015-01-01,2015,1,Séjours ambulatoires,8233.62,False
+2015-02-01,2015,2,Séjours ambulatoires,7291.13,False
+2015-03-01,2015,3,Séjours ambulatoires,8129.31,False
+2015-04-01,2015,4,Séjours ambulatoires,7744.06,False
+2015-05-01,2015,5,Séjours ambulatoires,8065.36,False
+2015-06-01,2015,6,Séjours ambulatoires,8037.95,False
+2015-07-01,2015,7,Séjours ambulatoires,7725.59,False
+2015-08-01,2015,8,Séjours ambulatoires,6839.64,False
+2015-09-01,2015,9,Séjours ambulatoires,7733.59,False
+2015-10-01,2015,10,Séjours ambulatoires,8543.6,False
+2015-11-01,2015,11,Séjours ambulatoires,8383.9,False
+2015-12-01,2015,12,Séjours ambulatoires,8444.24,False
+2016-01-01,2016,1,Séjours ambulatoires,8678.91,False
+2016-02-01,2016,2,Séjours ambulatoires,7685.45,False
+2016-03-01,2016,3,Séjours ambulatoires,8568.96,False
+2016-04-01,2016,4,Séjours ambulatoires,8162.86,False
+2016-05-01,2016,5,Séjours ambulatoires,8501.54,False
+2016-06-01,2016,6,Séjours ambulatoires,8472.65,False
+2016-07-01,2016,7,Séjours ambulatoires,8143.4,False
+2016-08-01,2016,8,Séjours ambulatoires,7209.53,False
+2016-09-01,2016,9,Séjours ambulatoires,8151.83,False
+2016-10-01,2016,10,Séjours ambulatoires,9005.65,False
+2016-11-01,2016,11,Séjours ambulatoires,8837.31,False
+2016-12-01,2016,12,Séjours ambulatoires,8900.91,False
+2011-01-01,2011,1,Séjours hospitalisation complète,5818.35,False
+2011-02-01,2011,2,Séjours hospitalisation complète,5152.33,False
+2011-03-01,2011,3,Séjours hospitalisation complète,5744.64,False
+2011-04-01,2011,4,Séjours hospitalisation complète,5472.4,False
+2011-05-01,2011,5,Séjours hospitalisation complète,5699.45,False
+2011-06-01,2011,6,Séjours hospitalisation complète,5680.08,False
+2011-07-01,2011,7,Séjours hospitalisation complète,5459.35,False
+2011-08-01,2011,8,Séjours hospitalisation complète,4833.28,False
+2011-09-01,2011,9,Séjours hospitalisation complète,5465.0,False
+2011-10-01,2011,10,Séjours hospitalisation complète,6037.4,False
+2011-11-01,2011,11,Séjours hospitalisation complète,5924.55,False
+2011-12-01,2011,12,Séjours hospitalisation complète,5967.18,False
+2012-01-01,2012,1,Séjours hospitalisation complète,5899.07,False
+2012-02-01,2012,2,Séjours hospitalisation complète,5223.81,False
+2012-03-01,2012,3,Séjours hospitalisation complète,5824.33,False
+2012-04-01,2012,4,Séjours hospitalisation complète,5548.31,False
+2012-05-01,2012,5,Séjours hospitalisation complète,5778.51,False
+2012-06-01,2012,6,Séjours hospitalisation complète,5758.88,False
+2012-07-01,2012,7,Séjours hospitalisation complète,5535.09,False
+2012-08-01,2012,8,Séjours hospitalisation complète,4900.33,False
+2012-09-01,2012,9,Séjours hospitalisation complète,5540.81,False
+2012-10-01,2012,10,Séjours hospitalisation complète,6121.15,False
+2012-11-01,2012,11,Séjours hospitalisation complète,6006.74,False
+2012-12-01,2012,12,Séjours hospitalisation complète,6049.97,False
+2013-01-01,2013,1,Séjours hospitalisation complète,6044.27,True
+2013-02-01,2013,2,Séjours hospitalisation complète,5352.39,True
+2013-03-01,2013,3,Séjours hospitalisation complète,5967.69,True
+2013-04-01,2013,4,Séjours hospitalisation complète,5684.88,True
+2013-05-01,2013,5,Séjours hospitalisation complète,5920.74,True
+2013-06-01,2013,6,Séjours hospitalisation complète,5900.62,True
+2013-07-01,2013,7,Séjours hospitalisation complète,5671.32,True
+2013-08-01,2013,8,Séjours hospitalisation complète,5020.95,True
+2013-09-01,2013,9,Séjours hospitalisation complète,5677.19,True
+2013-10-01,2013,10,Séjours hospitalisation complète,6271.82,True
+2013-11-01,2013,11,Séjours hospitalisation complète,6154.58,True
+2013-12-01,2013,12,Séjours hospitalisation complète,6198.88,True
+2014-01-01,2014,1,Séjours hospitalisation complète,6189.46,True
+2014-02-01,2014,2,Séjours hospitalisation complète,5480.97,True
+2014-03-01,2014,3,Séjours hospitalisation complète,6111.05,True
+2014-04-01,2014,4,Séjours hospitalisation complète,5821.44,True
+2014-05-01,2014,5,Séjours hospitalisation complète,6062.97,True
+2014-06-01,2014,6,Séjours hospitalisation complète,6042.37,True
+2014-07-01,2014,7,Séjours hospitalisation complète,5807.56,True
+2014-08-01,2014,8,Séjours hospitalisation complète,5141.56,True
+2014-09-01,2014,9,Séjours hospitalisation complète,5813.57,True
+2014-10-01,2014,10,Séjours hospitalisation complète,6422.48,True
+2014-11-01,2014,11,Séjours hospitalisation complète,6302.43,True
+2014-12-01,2014,12,Séjours hospitalisation complète,6347.79,True
+2015-01-01,2015,1,Séjours hospitalisation complète,6334.66,False
+2015-02-01,2015,2,Séjours hospitalisation complète,5609.54,False
+2015-03-01,2015,3,Séjours hospitalisation complète,6254.41,False
+2015-04-01,2015,4,Séjours hospitalisation complète,5958.01,False
+2015-05-01,2015,5,Séjours hospitalisation complète,6205.2,False
+2015-06-01,2015,6,Séjours hospitalisation complète,6184.12,False
+2015-07-01,2015,7,Séjours hospitalisation complète,5943.8,False
+2015-08-01,2015,8,Séjours hospitalisation complète,5262.18,False
+2015-09-01,2015,9,Séjours hospitalisation complète,5949.95,False
+2015-10-01,2015,10,Séjours hospitalisation complète,6573.15,False
+2015-11-01,2015,11,Séjours hospitalisation complète,6450.28,False
+2015-12-01,2015,12,Séjours hospitalisation complète,6496.7,False
+2016-01-01,2016,1,Séjours hospitalisation complète,6495.32,False
+2016-02-01,2016,2,Séjours hospitalisation complète,5751.81,False
+2016-03-01,2016,3,Séjours hospitalisation complète,6413.03,False
+2016-04-01,2016,4,Séjours hospitalisation complète,6109.11,False
+2016-05-01,2016,5,Séjours hospitalisation complète,6362.58,False
+2016-06-01,2016,6,Séjours hospitalisation complète,6340.95,False
+2016-07-01,2016,7,Séjours hospitalisation complète,6094.54,False
+2016-08-01,2016,8,Séjours hospitalisation complète,5395.63,False
+2016-09-01,2016,9,Séjours hospitalisation complète,6100.85,False
+2016-10-01,2016,10,Séjours hospitalisation complète,6739.85,False
+2016-11-01,2016,11,Séjours hospitalisation complète,6613.87,False
+2016-12-01,2016,12,Séjours hospitalisation complète,6661.47,False
+2011-01-01,2011,1,Urgences (SAU),7180.76,False
+2011-02-01,2011,2,Urgences (SAU),6358.79,False
+2011-03-01,2011,3,Urgences (SAU),7089.79,False
+2011-04-01,2011,4,Urgences (SAU),6753.8,False
+2011-05-01,2011,5,Urgences (SAU),7034.01,False
+2011-06-01,2011,6,Urgences (SAU),7010.11,False
+2011-07-01,2011,7,Urgences (SAU),6737.69,False
+2011-08-01,2011,8,Urgences (SAU),5965.03,False
+2011-09-01,2011,9,Urgences (SAU),6744.67,False
+2011-10-01,2011,10,Urgences (SAU),7451.1,False
+2011-11-01,2011,11,Urgences (SAU),7311.82,False
+2011-12-01,2011,12,Urgences (SAU),7364.44,False
+2012-01-01,2012,1,Urgences (SAU),7439.52,False
+2012-02-01,2012,2,Urgences (SAU),6587.93,False
+2012-03-01,2012,3,Urgences (SAU),7345.27,False
+2012-04-01,2012,4,Urgences (SAU),6997.17,False
+2012-05-01,2012,5,Urgences (SAU),7287.48,False
+2012-06-01,2012,6,Urgences (SAU),7262.72,False
+2012-07-01,2012,7,Urgences (SAU),6980.49,False
+2012-08-01,2012,8,Urgences (SAU),6179.98,False
+2012-09-01,2012,9,Urgences (SAU),6987.71,False
+2012-10-01,2012,10,Urgences (SAU),7719.6,False
+2012-11-01,2012,11,Urgences (SAU),7575.3,False
+2012-12-01,2012,12,Urgences (SAU),7629.82,False
+2013-01-01,2013,1,Urgences (SAU),6663.18,True
+2013-02-01,2013,2,Urgences (SAU),5900.46,True
+2013-03-01,2013,3,Urgences (SAU),6578.77,True
+2013-04-01,2013,4,Urgences (SAU),6266.99,True
+2013-05-01,2013,5,Urgences (SAU),6527.01,True
+2013-06-01,2013,6,Urgences (SAU),6504.83,True
+2013-07-01,2013,7,Urgences (SAU),6252.05,True
+2013-08-01,2013,8,Urgences (SAU),5535.08,True
+2013-09-01,2013,9,Urgences (SAU),6258.52,True
+2013-10-01,2013,10,Urgences (SAU),6914.03,True
+2013-11-01,2013,11,Urgences (SAU),6784.79,True
+2013-12-01,2013,12,Urgences (SAU),6833.62,True
+2014-01-01,2014,1,Urgences (SAU),5886.84,True
+2014-02-01,2014,2,Urgences (SAU),5212.98,True
+2014-03-01,2014,3,Urgences (SAU),5812.26,True
+2014-04-01,2014,4,Urgences (SAU),5536.81,True
+2014-05-01,2014,5,Urgences (SAU),5766.54,True
+2014-06-01,2014,6,Urgences (SAU),5746.94,True
+2014-07-01,2014,7,Urgences (SAU),5523.61,True
+2014-08-01,2014,8,Urgences (SAU),4890.17,True
+2014-09-01,2014,9,Urgences (SAU),5529.33,True
+2014-10-01,2014,10,Urgences (SAU),6108.47,True
+2014-11-01,2014,11,Urgences (SAU),5994.28,True
+2014-12-01,2014,12,Urgences (SAU),6037.43,True
+2015-01-01,2015,1,Urgences (SAU),5110.5,False
+2015-02-01,2015,2,Urgences (SAU),4525.51,False
+2015-03-01,2015,3,Urgences (SAU),5045.76,False
+2015-04-01,2015,4,Urgences (SAU),4806.63,False
+2015-05-01,2015,5,Urgences (SAU),5006.06,False
+2015-06-01,2015,6,Urgences (SAU),4989.05,False
+2015-07-01,2015,7,Urgences (SAU),4795.17,False
+2015-08-01,2015,8,Urgences (SAU),4245.27,False
+2015-09-01,2015,9,Urgences (SAU),4800.14,False
+2015-10-01,2015,10,Urgences (SAU),5302.9,False
+2015-11-01,2015,11,Urgences (SAU),5203.78,False
+2015-12-01,2015,12,Urgences (SAU),5241.23,False

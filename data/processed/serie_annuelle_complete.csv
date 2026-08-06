@@ -1,0 +1,52 @@
+ANNEE,INDICATEUR,VALEUR,INTERPOLE,COMPARABLE
+2011,Consultations externes,633536.0,False,True
+2012,Consultations externes,660958.0,False,True
+2013,Consultations externes,643288.6666666666,True,True
+2014,Consultations externes,625619.3333333334,True,True
+2015,Consultations externes,607950.0,False,True
+2016,Consultations externes,644602.0,False,True
+2011,Journées PSY,34572.0,False,True
+2012,Journées PSY,37200.0,False,True
+2013,Journées PSY,41880.0,True,True
+2014,Journées PSY,46560.0,True,True
+2015,Journées PSY,51240.0,False,True
+2016,Journées PSY,50690.0,False,True
+2011,Journées SLD,104377.0,False,True
+2012,Journées SLD,89494.0,False,True
+2013,Journées SLD,82272.0,True,True
+2014,Journées SLD,75050.0,True,True
+2015,Journées SLD,67828.0,False,True
+2016,Journées SLD,67065.0,False,True
+2011,Journées SSR,69057.0,False,True
+2012,Journées SSR,73413.0,False,True
+2013,Journées SSR,81619.33333333333,True,True
+2014,Journées SSR,89825.66666666667,True,True
+2015,Journées SSR,98032.0,False,True
+2016,Journées SSR,97928.0,False,True
+2012,Lits installés,2132.0,False,True
+2013,Lits installés,2160.0,True,True
+2014,Lits installés,2188.0,True,True
+2015,Lits installés,2216.0,False,True
+2016,Lits installés,2229.0,False,True
+2011,Séjours ambulatoires,84911.0,False,True
+2012,Séjours ambulatoires,87713.0,False,True
+2013,Séjours ambulatoires,90199.33333333333,True,True
+2014,Séjours ambulatoires,92685.66666666667,True,True
+2015,Séjours ambulatoires,95172.0,False,True
+2016,Séjours ambulatoires,100319.0,False,True
+2011,Séjours hospitalisation complète,67254.0,False,True
+2012,Séjours hospitalisation complète,68187.0,False,True
+2013,Séjours hospitalisation complète,69865.33333333333,True,True
+2014,Séjours hospitalisation complète,71543.66666666667,True,True
+2015,Séjours hospitalisation complète,73222.0,False,True
+2016,Séjours hospitalisation complète,75079.0,False,True
+2012,Transplantations,314.0,False,True
+2013,Transplantations,335.3333333333333,True,True
+2014,Transplantations,356.6666666666667,True,True
+2015,Transplantations,378.0,False,True
+2016,Transplantations,394.0,False,True
+2011,Urgences (SAU),83002.0,False,False
+2012,Urgences (SAU),85993.0,False,False
+2013,Urgences (SAU),77019.33333333333,True,False
+2014,Urgences (SAU),68045.66666666667,True,False
+2015,Urgences (SAU),59072.0,False,False

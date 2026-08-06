@@ -41,9 +41,10 @@ projet-data-pslcfx/
 | 2. Données externes | Open data DREES (data.gouv.fr) | Téléchargement des séries quotidiennes de passages aux urgences 2017-2023 et filtrage géographique | `data/external/*.csv` |
 | 3. Consolidation | `data/raw/`, `data/external/` | Nettoyage, harmonisation des libellés et des périodes, contrôle de cohérence | `data/processed/serie_annuelle.csv` |
 | 4. Profil saisonnier | `data/external/` | Mesure de la saisonnalité mensuelle sur trois années pré-COVID, en part du total annuel et en intensité quotidienne | `data/processed/profil_saisonnier.csv` |
-| 5. Modélisation SARIMA | Série consolidée | Sélection d'ordre (`pmdarima.auto_arima`), estimation, diagnostic des résidus, validation hors échantillon | `data/processed/previsions.csv` |
-| 6. Scénario de crise | Prévisions de référence + années 2020-2021 | Mesure de l'impact COVID réel (ratio mensuel 2020 vs moyenne 2017-2019) puis application à la trajectoire prévue | `data/processed/scenario_crise.csv` |
-| 7. Restitution | Séries + prévisions + scénarios | Infographie interactive et synthèse rédigée | `app/`, `rapports/` |
+| 5. Reconstruction mensuelle | Série annuelle + profil saisonnier | Interpolation linéaire des années manquantes, puis répartition des totaux annuels selon le profil mesuré, avec contrôle de conservation | `data/processed/serie_annuelle_complete.csv`, `data/processed/serie_mensuelle.csv` |
+| 6. Modélisation SARIMA | Série mensuelle | Sélection d'ordre (`pmdarima.auto_arima`), estimation, diagnostic des résidus, validation hors échantillon | `data/processed/previsions.csv` |
+| 7. Scénario de crise | Prévisions de référence + années 2020-2021 | Mesure de l'impact COVID réel (ratio mensuel 2020 vs moyenne 2017-2019) puis application à la trajectoire prévue | `data/processed/scenario_crise.csv` |
+| 8. Restitution | Séries + prévisions + scénarios | Infographie interactive et synthèse rédigée | `app/`, `rapports/` |
 
 ## Données sources
 
@@ -236,7 +237,7 @@ streamlit run app/app.py
 - [x] Série annuelle des indicateurs clés (`data/processed/serie_annuelle.csv`)
 - [x] Récupération des données publiques de passages aux urgences (DREES 2017-2023)
 - [x] Profil saisonnier mensuel mesuré (`data/processed/profil_saisonnier.csv`)
-- [ ] Construction des séries temporelles
+- [x] Reconstruction de la série mensuelle (`data/processed/serie_mensuelle.csv`)
 - [ ] Modélisation SARIMA
 - [ ] Scénario de crise sanitaire
 - [ ] Application Streamlit
