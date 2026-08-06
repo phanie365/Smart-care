@@ -38,11 +38,11 @@ projet-data-pslcfx/
 | Étape | Entrée | Traitement | Sortie |
 |-------|--------|-----------|--------|
 | 1. Extraction | `docs/*.pdf` | Saisie **manuelle** des indicateurs (les plaquettes sont des documents graphiques, illisibles par extraction automatique) puis contrôle qualité automatisé | `data/raw/*.csv` |
-| 2. Données externes | Portail OSCOUR / open data | Téléchargement et filtrage sur le périmètre géographique pertinent | `data/external/*.csv` |
-| 3. Consolidation | `data/raw/`, `data/external/` | Nettoyage, harmonisation des libellés et des périodes, contrôle de cohérence | `data/processed/serie_activite.csv` |
-| 4. Analyse exploratoire | `data/processed/` | Statistiques descriptives, décomposition tendance / saisonnalité, tests de stationnarité (ADF) | `notebooks/`, figures |
+| 2. Données externes | Open data DREES (data.gouv.fr) | Téléchargement des séries quotidiennes de passages aux urgences 2017-2023 et filtrage géographique | `data/external/*.csv` |
+| 3. Consolidation | `data/raw/`, `data/external/` | Nettoyage, harmonisation des libellés et des périodes, contrôle de cohérence | `data/processed/serie_annuelle.csv` |
+| 4. Profil saisonnier | `data/external/` | Mesure de la saisonnalité mensuelle sur trois années pré-COVID, en part du total annuel et en intensité quotidienne | `data/processed/profil_saisonnier.csv` |
 | 5. Modélisation SARIMA | Série consolidée | Sélection d'ordre (`pmdarima.auto_arima`), estimation, diagnostic des résidus, validation hors échantillon | `data/processed/previsions.csv` |
-| 6. Scénario de crise | Prévisions de référence | Application d'un choc d'activité paramétré (amplitude, durée, montée en charge) et comparaison au scénario tendanciel | `data/processed/scenario_crise.csv` |
+| 6. Scénario de crise | Prévisions de référence + années 2020-2021 | Mesure de l'impact COVID réel (ratio mensuel 2020 vs moyenne 2017-2019) puis application à la trajectoire prévue | `data/processed/scenario_crise.csv` |
 | 7. Restitution | Séries + prévisions + scénarios | Infographie interactive et synthèse rédigée | `app/`, `rapports/` |
 
 ## Données sources
@@ -96,6 +96,81 @@ non corrigés puisque les CSV doivent reproduire fidèlement les rapports publi�
 2. `capacite.csv` 2012, lits SSR : `85 + 149 = 234` contre un total publié de `209`.
    Le détail par site provient d'une lecture de graphique, d'où son imprécision.
 3. `capacite.csv` ne possède pas de colonne `NOTE`, contrairement aux autres fichiers.
+
+## Données externes — passages aux urgences (DREES)
+
+Les rapports annuels ne publient qu'un total d'urgences par an, sur des périmètres
+mouvants. Impossible d'en tirer une saisonnalité. Le profil mensuel est donc **mesuré**
+sur une source publique à pas quotidien, plutôt que supposé.
+
+| | |
+|---|---|
+| **Jeu de données** | Séries longues corrigées du nombre de passages aux urgences 2017 à 2023 en France |
+| **Producteur** | DREES — Direction de la recherche, des études, de l'évaluation et des statistiques (ministère de la Santé) |
+| **Diffusion** | [data.gouv.fr](https://www.data.gouv.fr/datasets/series-longues-corrigees-du-nombre-de-passages-aux-urgences-2017-a-2023-en-france) |
+| **Licence** | Licence Ouverte 2.0 (Etalab) — réutilisation libre avec mention de la source |
+| **Période** | 1er janvier 2017 au 31 décembre 2023, pas quotidien |
+| **Granularité** | Départementale (98 codes) |
+| **Fichier local** | `data/external/passages_urgences_drees_2017_2023.csv` (7,4 Mo) |
+| **Colonnes** | `date`, `dep`, `libelle_dep`, `nb_passages` |
+
+### Méthode de construction de la source
+
+Ces séries ne sont **pas des comptages bruts**. Les Résumés de Passages aux Urgences
+(RPU) transmis par les établissements ont une couverture incomplète et variable dans le
+temps : tous les services ne remontent pas leurs données, et pas toujours de façon
+continue. La DREES corrige ce biais par **étalonnage-calage** sur les totaux de la SAE
+(Statistique Annuelle des Établissements) et du PMSI, afin de produire des séries
+continues et comparables d'une année à l'autre.
+
+Conséquence pratique : `nb_passages` contient des **valeurs décimales** (par exemple
+`397.1`). Ce sont des estimations calées, pas des effectifs. **Elles ne doivent pas être
+arrondies à l'import**, sous peine d'introduire un biais systématique.
+
+> **Écart de documentation** : la fiche du jeu de données annonce des dates au format
+> `dd/mm/yyyy`, mais le fichier livré utilise le format ISO `yyyy-mm-dd` avec le
+> séparateur `;`. Le code du projet essaie les deux formats et échoue explicitement si
+> aucun ne convient, plutôt que de produire silencieusement des dates vides.
+
+### Téléchargement
+
+```bash
+python scripts/telecharger_urgences_drees.py          # ignore si déjà présent
+python scripts/telecharger_urgences_drees.py --force  # force le retéléchargement
+```
+
+Le script vérifie la taille du fichier, son parsing, la présence des colonnes attendues,
+la lisibilité des dates et le caractère numérique des passages avant de valider.
+
+### Périmètre retenu et années exclues
+
+Le fichier étant départemental, il ne permet pas d'isoler un établissement. On retient
+le **département 75 (Paris)**, où se trouve la Pitié-Salpêtrière. Charles-Foix, à
+Ivry-sur-Seine (94), n'a pas de service d'accueil des urgences.
+
+Le profil « normal » est construit sur **2017, 2018 et 2019 uniquement**. Les années
+2020 et suivantes sont écartées de la référence pour deux raisons : l'épidémie déforme
+la saisonnalité habituelle, et les confinements ont fait chuter la fréquentation pour
+des motifs sans rapport avec l'état de santé de la population — en avril 2020, Paris
+n'enregistre que **54 %** des passages d'un mois d'avril normal.
+
+**Le fichier complet est néanmoins conservé dans `data/external/`.** Les années 2020 à
+2023 serviront à l'étape « scénario de crise » pour **mesurer** l'impact réel du COVID
+(ratio mois par mois entre 2020 et la moyenne 2017-2019) au lieu de le supposer.
+
+### Résultat
+
+`data/processed/profil_saisonnier.csv` — 12 lignes, colonnes `MOIS`, `PCT_NORMAL`
+(part du mois dans le total annuel, somme = 100) et `PASSAGES_MOYENS_PAR_JOUR`.
+
+La saisonnalité parisienne est réelle mais modérée : de **2 142 passages par jour en
+août** à **2 713 en novembre**, soit 27 % d'écart entre le mois le plus creux et le plus
+chargé. Rapporté à la moyenne de 2 531 par jour, **le creux estival (−15 %) est bien plus
+marqué que le pic hivernal (+7 %)**. Le profil calculé sur l'Île-de-France entière est
+quasi identique (écart mensuel maximal de 0,26 point, corrélation 0,983), ce qui valide
+l'usage du seul département 75.
+
+Détail de la méthode et graphiques : `notebooks/02_saisonnalite_urgences.ipynb`.
 
 ## Pièges de comparabilité
 
@@ -158,7 +233,9 @@ streamlit run app/app.py
 - [x] Dépôt des 3 rapports annuels dans `docs/`
 - [x] Extraction manuelle des indicateurs vers `data/raw/` (6 fichiers, 180 lignes)
 - [x] Script de contrôle qualité des données sources
-- [ ] Récupération des données OSCOUR
+- [x] Série annuelle des indicateurs clés (`data/processed/serie_annuelle.csv`)
+- [x] Récupération des données publiques de passages aux urgences (DREES 2017-2023)
+- [x] Profil saisonnier mensuel mesuré (`data/processed/profil_saisonnier.csv`)
 - [ ] Construction des séries temporelles
 - [ ] Modélisation SARIMA
 - [ ] Scénario de crise sanitaire
