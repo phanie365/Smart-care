@@ -8,10 +8,10 @@ sanitaire, et restitution sous forme d'infographie interactive Streamlit.
 
 1. **Extraire** les indicateurs d'activité contenus dans les rapports annuels (PDF) et
    les convertir en jeux de données exploitables.
-2. **Consolider** ces données avec des sources publiques (réseau OSCOUR — passages aux
-   urgences) pour construire des séries temporelles cohérentes.
-3. **Prévoir** l'activité future à l'aide d'un modèle SARIMA (saisonnalité annuelle /
-   mensuelle selon la granularité disponible).
+2. **Consolider** ces données avec des sources publiques (séries quotidiennes de passages
+   aux urgences publiées par la DREES) pour construire des séries temporelles cohérentes.
+3. **Prévoir** l'activité future à l'aide d'un modèle SARIMA, sur une saisonnalité
+   mensuelle mesurée et non supposée.
 4. **Simuler** un scénario de crise sanitaire (choc d'activité) et en mesurer l'impact
    sur les capacités du groupe hospitalier.
 5. **Restituer** l'ensemble sous forme d'une infographie interactive (Streamlit + Plotly).
@@ -23,7 +23,7 @@ projet-data-pslcfx/
 ├── docs/               # Rapports annuels sources (3 PDFs) et documentation de référence
 ├── data/
 │   ├── raw/            # CSV bruts extraits des PDFs (aucune transformation)
-│   ├── external/       # Données publiques téléchargées (OSCOUR, open data santé)
+│   ├── external/       # Données publiques téléchargées (DREES, open data santé)
 │   └── processed/      # Séries temporelles construites, prévisions, scénarios
 ├── notebooks/          # Notebooks d'exploration, de modélisation et de validation
 ├── scripts/            # Scripts utilitaires reproductibles (contrôle qualité, etc.)
@@ -187,14 +187,16 @@ suivants doivent être respectés dans toute analyse, sous peine de produire des
 | 2015 | 121 721 passages | SAU 59 072 **+** urgences dentaires 62 649 |
 | 2016 | 127 678 passages | Périmètre encore différent (dont 61 651 urgences spécialisées) |
 
-La progression apparente de +48 % entre 2012 et 2015 est un **artefact de périmètre**,
+La progression apparente de +41,5 % entre 2012 et 2015 est un **artefact de périmètre**,
 pas une croissance d'activité. Toute série temporelle sur les urgences devra donc
 s'appuyer sur le **SAU seul**, à l'exclusion des urgences dentaires et spécialisées.
 
 ### 2. Soins dentaires : définitions différentes
 
-377 686 actes en 2012 contre 25 529 en 2015 — un rapport de 1 à 12 qui traduit un
-changement de définition de l'acte, et non un effondrement de l'activité.
+377 686 actes sur le site de la Pitié-Salpêtrière en 2012 contre 25 529 en 2015 — un
+rapport de près de 1 à 15 qui traduit un changement de définition de l'acte, et non un
+effondrement de l'activité. Sur le total des deux sites, l'écart reste de 1 à 12
+(409 367 actes contre 32 847).
 **Ces deux valeurs ne doivent jamais être comparées ni mises dans une même série.**
 
 ### 3. Rapport 2016 : totaux groupe uniquement
@@ -215,11 +217,39 @@ pip install -r requirements.txt
 > d'erreur à l'import, épingler les versions dans `requirements.txt` ou se replier sur
 > `statsmodels.tsa.statespace.SARIMAX` avec une recherche d'ordre manuelle.
 
+## Livrables
+
+Deux documents rédigés, dans `rapports/` :
+
+| Document | Contenu | Lecteur visé |
+|----------|---------|--------------|
+| [`rapport_technique.md`](rapports/rapport_technique.md) | Sources, construction du dataset, pièges de comparabilité, pipeline, modèle et validation, scénario de crise, limites et perspectives | Jury, encadrant, tout lecteur souhaitant reproduire ou auditer les traitements |
+| [`rapport_mise_en_place.md`](rapports/rapport_mise_en_place.md) | Recommandations opérationnelles : gestion des afflux, préparation aux crises, feuille de route | Direction d'établissement, encadrement soignant |
+
+À quoi s'ajoute l'infographie interactive (`app/`), dont la commande de lancement est
+donnée ci-dessous.
+
+**Tous les chiffres cités dans ces documents proviennent des fichiers du dépôt.** Aucune
+valeur n'est estimée de mémoire ni arrondie sans contrôle.
+
 ## Lancer l'infographie
 
-```bash
-streamlit run app/app.py
+L'application vit dans l'environnement virtuel du projet. Le plus simple est d'appeler
+Streamlit via le Python de cet environnement, sans activation préalable :
+
+```powershell
+# Windows
+.\.venv\Scripts\python.exe -m streamlit run app/app.py
 ```
+
+```bash
+# macOS / Linux
+./.venv/bin/python -m streamlit run app/app.py
+```
+
+Si l'environnement est déjà activé, `streamlit run app/app.py` suffit. La commande
+`streamlit` seule échoue tant que l'environnement n'est pas activé : le paquet est
+installé dans `.venv/`, pas au niveau du système.
 
 L'application s'ouvre dans le navigateur sur `http://localhost:8501`. Elle **ne
 recalcule aucun modèle** : elle lit uniquement les fichiers déjà produits dans
@@ -274,4 +304,4 @@ graphique est accompagné d'une phrase de lecture qui en donne le message princi
 - [x] Modélisation SARIMA et prévision à 12 mois validée hors échantillon
 - [x] Scénario de crise sanitaire à partir de l'impact COVID mesuré
 - [x] Application Streamlit (`app/app.py`)
-- [ ] Rédaction des livrables
+- [x] Rédaction des livrables (`rapports/`)
