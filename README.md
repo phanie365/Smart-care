@@ -215,11 +215,44 @@ pip install -r requirements.txt
 > d'erreur à l'import, épingler les versions dans `requirements.txt` ou se replier sur
 > `statsmodels.tsa.statespace.SARIMAX` avec une recherche d'ordre manuelle.
 
-## Lancement de l'application
+## Lancer l'infographie
 
 ```bash
 streamlit run app/app.py
 ```
+
+L'application s'ouvre dans le navigateur sur `http://localhost:8501`. Elle **ne
+recalcule aucun modèle** : elle lit uniquement les fichiers déjà produits dans
+`data/raw/` et `data/processed/`. Les notebooks doivent donc avoir été exécutés au
+préalable — ou, plus simplement, les fichiers versionnés suffisent tels quels.
+
+### Organisation de l'application
+
+| Fichier | Rôle |
+|---------|------|
+| `app/app.py` | Interface : trois onglets, filtres, graphiques |
+| `app/utils.py` | Chargement des fichiers (avec `@st.cache_data`), palette et glossaire |
+
+### Les trois onglets
+
+1. **L'hôpital aujourd'hui** — six chiffres clés, la bascule vers l'ambulatoire, la
+   répartition des lits par discipline et les principales causes d'hospitalisation.
+2. **L'activité au fil de l'année** — le rythme mensuel mesuré sur les données DREES,
+   puis l'évolution mois par mois de l'indicateur choisi, prolongée par la prévision et
+   sa marge d'estimation. Deux filtres : indicateur affiché et période.
+3. **Et si une crise arrive ?** — un interrupteur « Mode crise sanitaire » qui superpose
+   à la trajectoire normale celle qui serait constatée si une crise comparable à 2020
+   survenait, avec trois indicateurs d'impact. Les filtres de l'onglet 2 s'y appliquent
+   également.
+
+### Parti pris de restitution
+
+Le public visé est la direction d'établissement et les équipes soignantes, pas des
+spécialistes de la donnée. Le vocabulaire statistique est donc banni de l'écran : on
+parle de « prévision » et de « marge d'estimation », jamais de modèle ni de métrique
+d'erreur. En revanche, le vocabulaire hospitalier est conservé — MCO, SSR, SLD,
+ambulatoire, SAU — et chaque sigle est défini dans un dépliant en haut de page. Chaque
+graphique est accompagné d'une phrase de lecture qui en donne le message principal.
 
 ## Conventions
 
@@ -238,7 +271,7 @@ streamlit run app/app.py
 - [x] Récupération des données publiques de passages aux urgences (DREES 2017-2023)
 - [x] Profil saisonnier mensuel mesuré (`data/processed/profil_saisonnier.csv`)
 - [x] Reconstruction de la série mensuelle (`data/processed/serie_mensuelle.csv`)
-- [ ] Modélisation SARIMA
-- [ ] Scénario de crise sanitaire
-- [ ] Application Streamlit
+- [x] Modélisation SARIMA et prévision à 12 mois validée hors échantillon
+- [x] Scénario de crise sanitaire à partir de l'impact COVID mesuré
+- [x] Application Streamlit (`app/app.py`)
 - [ ] Rédaction des livrables
